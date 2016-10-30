@@ -1,0 +1,16 @@
+{
+  "name": "reddit-remake",
+  "version": "",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "dependencies": {
+    "bower": "^1.7.9"
+  },
+  "engines": {
+    "node": "4.4.5"
+  },
+  "repository": {},
+  "keywords": [],
+  "devDependencies": {}
+}

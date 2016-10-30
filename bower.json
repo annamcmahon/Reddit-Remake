@@ -1,0 +1,12 @@
+{
+  "name": "reddit-remake",
+  "version": "0.0.1",
+  "main": "src/index.html",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "jquery": "^3.1.1",
+    "bootstrap": "^3.3.7",
+    "angular-ui-router": "^0.3.1"
+  },
+  "private": true
+}
