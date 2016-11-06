@@ -1,0 +1,26 @@
+.row-item {
+  padding-top:7px;
+  padding-bottom:7px;
+}
+.page-content{
+  margin-top:100px;
+  margin-left:100px;
+}
+.subscribe-button{
+  background-color: rgba(255, 0, 0);
+}
+.subscribe-button,
+.subscribe-button:active,
+.subscribe-button:visited,
+.subscribe-button:focus {
+    background-color: rgba(215, 215, 215, .7);
+    border-color: rgba(215, 215, 215, .7);
+}
+.subscribe-button:hover{
+  background-color: rgba(215, 215, 215, .5);
+  border-color: rgba(215, 215, 215, .5);
+}
+.subscribe-button:visited{
+    background-color: rgba(215, 215, 215, 1);
+    border-color: rgba(215, 215, 215, 1);
+}

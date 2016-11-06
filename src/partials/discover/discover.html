@@ -1,1 +1,22 @@
-<div>discover</div>
+<div ng-controller="discoverController">
+  <h1>Discover</h1>
+  <div class="btn-group">
+      <label class="btn btn-primary" ng-model="vm.radioModel" uib-btn-radio="'suggested'">Suggested</label>
+      <label class="btn btn-primary" ng-model="vm.radioModel" uib-btn-radio="'friends'">Friends Front</label>
+      <label class="btn btn-primary" ng-model="vm.radioModel" uib-btn-radio="'popular'">Popular</label>
+  </div>
+  <br>
+  <div ng-show="vm.radioModel=='suggested'" class="btn-group" uib-dropdown is-open="status.isopen">
+    <!-- add dropdown-->
+  </div>
+  <br>
+  <div ng-model="vm.radioModel">
+    <div class="row" ng-repeat="c in vm.data[vm.radioModel]">
+      <div class=" row-item">
+        <label class="btn subscribe-button" ng-model="subscribed[c.reddit]" uib-btn-radio="'c.reddit'">Subscribe</label>
+        {{c.reddit}}
+        {{c.description || "N/A"}}
+      </div>
+    </div>
+  </div>
+</div>

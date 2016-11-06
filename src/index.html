@@ -3,6 +3,9 @@
 	<head>
 		<!-- CSS Libaries -->
 		<link href='assets/libs/bootstrap/dist/css/bootstrap.min.css' rel='stylesheet'>
+		<link href='assets/libs/angular-material/angular-material.min.css' rel='stylesheet'>
+		<link href='partials/all.css' rel='stylesheet'>
+
 	</head>
 
 	<body ng-app='app'>
@@ -28,12 +31,12 @@
 								<li role="separator" class="divider"></li>
 								<li><a ui-sref="profile">Profile</a></li>
 								<li role="separator" class="divider"></li>
-								<li><a ui-sref="">Logout</a></li>
+								<li><a ui-sref="profile">Logout</a></li>
 		          </ul>
 						</li>
 				</ul>
 		</nav>
-		<div ui-view></div>
+		<div ui-view class="text-center"></div>
 	</body>
 
 	<!-- JS Libraries -->
@@ -41,6 +44,11 @@
 	<script src='assets/libs/jquery/dist/jquery.js'></script>
 	<script src='assets/libs/angular-ui-router/release/angular-ui-router.min.js'></script>
 	<script src='assets/libs/bootstrap/dist/js/bootstrap.min.js'></script>
+	<script src='assets/libs/angular-animate/angular-animate.min.js'></script>
+	<script src='assets/libs/angular-bootstrap/ui-bootstrap.js'></script>
+	<script src='assets/libs/angular-material/angular-material.min.js'></script>
+
+
 
 	<!-- other JS -->
 
