@@ -1,1 +1,40 @@
-<div> browse <div>
+<div ng-controller="browseController">
+<h1> /Front </h1>
+<div> <!--- add dropdown here -->
+	sort by
+</div>
+<div>
+	<span class="glyphicon glyphicon-pencil"></span> Post
+</div>
+
+<div class="container">
+<div class="row browse" ng-repeat="p in vm.data">
+      <div class="col-sm-2"> 
+      	<div class="container votes">
+      		<div class="row">
+				<span class="glyphicon glyphicon-arrow-up"></span>
+			</div>
+      		<div class="row vote-count">
+      			{{p.votes}}
+      		</div>
+      		<div class="row">
+				<span class="glyphicon glyphicon-arrow-down"></span>
+			</div>
+      	</div>
+
+      </div>
+      <div class="col-sm-8">
+        <h2>{{p.postTitle}}</h2>
+        <p>{{p.source || "N/A"}}</p>
+
+      </div>
+      <div class="col-sm-2 article-icons">
+      	<span class="glyphicon glyphicon-link"></span>
+        <span class="glyphicon glyphicon-star"></span>
+        <span class="glyphicon glyphicon-flag"></span>
+        <span class="glyphicon glyphicon-comment"></span>
+      </div>
+</div>
+</div>
+ 
+</div>

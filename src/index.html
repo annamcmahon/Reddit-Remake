@@ -10,9 +10,9 @@
 
 	<body ng-app='app'>
 		<!-- NAVIGATION -->
-		<nav class="navbar navbar-inverse" role="navigation">
+		<nav class="navbar navbar-inverse" role="navigation" id="test">
 		    <div class="navbar-header">
-		        <a class="navbar-brand" ui-sref="#">Reddit Remake </a>
+		        <a class="navbar-brand" ui-sref="#"><img id="redditIcon" src="reddit.png" height="50"></img> </a>
 		    </div>
 				<form class="navbar-form navbar-left">
 					<div class="form-group">
@@ -20,12 +20,12 @@
 					</div>
 					<button type="submit" class="btn btn-default">Submit</button>
 				</form>
-		    <ul class="nav navbar-nav navbar-right">
-		        <li><a ui-sref="browse">Front</a></li>
-						<li><a ui-sref="browse">All</a></li>
-						<li><a ui-sref="discover">discover</a></li>
+		    <ul class="nav navbar-nav navbar-right links">
+		        <li><a ui-sref="browse">FRONT</a></li>
+						<li><a ui-sref="browse">ALL</a></li>
+						<li><a ui-sref="discover">DISCOVER</a></li>
 						<li class="dropdown">
-		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Profile <span class="caret"></span></a>
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"><span class="glyphicon glyphicon-user"></span> <span class="caret"></span></a>
 		          <ul class="dropdown-menu">
 		            <li><a ui-sref="profile-activity">Activity</a></li>
 								<li role="separator" class="divider"></li>

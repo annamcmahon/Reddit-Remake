@@ -24,3 +24,54 @@
     background-color: rgba(215, 215, 215, 1);
     border-color: rgba(215, 215, 215, 1);
 }
+
+#redditIcon { /* this is for the icon in the navbar, probably a better fix to push up */
+
+  margin-top: -15px;
+}
+
+.navbar { /* TODO: the rounded border should be removed here */
+  background-color: #9E9E9E;
+  border: 0;
+
+}
+
+.glyphicon {
+  font-size: 1.4em;
+}
+
+.navbar-inverse .navbar-nav>li>a{
+  color: #F5F5F5;
+}
+
+ul.nav a:hover { 
+  color: #616161 !important; 
+}
+
+.glyphicon-arrow-up {
+  color: #FF5252;
+}
+
+.glyphicon-arrow-down {
+  color: #FF5252;
+}
+
+.votes {
+  width: auto;
+  margin: 0 auto;
+  margin-top: 20%;
+}
+
+
+.browse {
+  border-top: 2px solid black;
+  text-align: left;
+}
+
+.article-icons {
+  margin-top: 5%;
+}
+
+.vote-count {
+  padding-left: 10%;
+}

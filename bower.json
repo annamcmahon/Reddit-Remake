@@ -9,7 +9,8 @@
     "angular-ui-router": "^0.3.1",
     "angular-animate": "^1.5.8",
     "angular-bootstrap": "^2.2.0",
-    "angular-material": "^1.1.1"
+    "angular-material": "^1.1.1",
+    "module": "^1.0.4"
   },
   "private": true
 }
