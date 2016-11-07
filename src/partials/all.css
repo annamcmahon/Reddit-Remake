@@ -60,11 +60,11 @@ ul.nav a:hover {
   color: #616161 !important;
 }
 
-.glyphicon-arrow-up {
+.glyphicon-triangle-up {
   color: #FF5252;
 }
 
-.glyphicon-arrow-down {
+.glyphicon-triangle-down {
   color: #FF5252;
   /*font-size: 2.2em;*/
 }
@@ -95,7 +95,7 @@ ul.nav a:hover {
 */
 .glyphicon-plus:hover,
 .glyphicon-plus.active{
-  color: #add8e6;
+  color: #FF5252;
 }
 
 .browse {
@@ -160,8 +160,13 @@ h2 {
   font-size: 16px;
   font-weight: 500;
   color: #212121 !important;
-  margin-top: 0px;
   margin-bottom: 0px;
+}
+h2.discover-text{
+  margin-top: 0px!important;
+}
+.discover-text:hover{
+  color: #FF5252!important;
 }
 h3 {
   font-size: 12px;
