@@ -4,6 +4,6 @@ var discoverModule = angular.module('discover',[]);
 var makePostModule = angular.module('make-post',[]);
 var commentsModule = angular.module('comments',[]);
 var sharedService = angular.module('SharedService', []);
-
+var profileActivityModule = angular.module('profileActivity', []);
 // dependencies of app module in []
-var app = angular.module('app', ['ui.router','ui.select','SharedService','ngSanitize','ui.bootstrap', 'browse', 'login', 'discover', 'make-post', 'comments']);
+var app = angular.module('app', ['ui.router','ui.select','SharedService','ngSanitize','profileActivity','ui.bootstrap', 'browse', 'login', 'discover', 'make-post', 'comments']);

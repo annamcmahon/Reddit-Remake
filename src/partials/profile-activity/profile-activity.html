@@ -1,1 +1,100 @@
-<div>Profile activity </div>
+<div ng-controller="discoverController">
+  <h1>Profile Activity</h1>
+  <div class="btn-group">
+      <label class="btn  secondary-nav-button" ng-model="vm.radioModel" uib-btn-radio="'saved'">Saved</label>
+      <label class="btn secondary-nav-button" ng-model="vm.radioModel" uib-btn-radio="'posts'">Posts</label>
+      <label class="btn secondary-nav-button" ng-model="vm.radioModel" uib-btn-radio="'subscriptions'">Subscriptions</label>
+      <label class="btn secondary-nav-button" ng-model="vm.radioModel" uib-btn-radio="'comments'">Comments</label>
+  </div>
+  <br></br>
+  <div ng-show="vm.radioModel=='saved'" >
+    <div class="form-group">
+      <div class="col-md-4 col-md-offset-4">
+        <ui-select ng-model="vm.subreddits.selected" theme="bootstrap">
+          <ui-select-match placeholder="Filter by Subreddit">Filter by Subreddit: {{$select.selected}}</ui-select-match>
+          <ui-select-choices repeat="item in vm.subreddits | filter: $select.search">
+            <div ng-bind-html="item | highlight: $select.search"></div>
+          </ui-select-choices>
+        </ui-select>
+      </div>
+    </div>
+    <br></br>
+    <div class="row browse" ng-repeat="p in vm.data">
+    		<md-divider class="divider-custom" ></md-divider>
+          <div class="col-sm-2 text-right">
+          	<div class="container votes">
+          		<div class="row">
+    				<span ng-click="p.votes = p.votes + 1" class="glyphicon glyphicon-triangle-top"></span>
+    			</div>
+          		<div class="row vote-count">
+          			{{p.votes}}
+          		</div>
+          		<div class="row">
+    				<span ng-click="p.votes = p.votes - 1" class="glyphicon glyphicon-triangle-bottom"></span>
+    			</div>
+          	</div>
+          </div>
+          <div class="col-sm-8 text-left">
+            <h2 class="post-title">{{p.postTitle}}</h2>
+            <h3>{{p.source || "N/A"}}</h3>
+    				<div></div>
+    				<span class="glyphicon glyphicon-share"></span>
+    				<span class="glyphicon glyphicon-star"></span>
+    				<span class="glyphicon glyphicon-flag"></span>
+    				<span class="glyphicon glyphicon-comment"></span>
+          </div>
+    </div>
+  </div>
+  <br>
+  <div ng-show="vm.radioModel=='posts'" >
+    <div class="form-group">
+      <div class="col-md-4 col-md-offset-4">
+        <ui-select ng-model="vm.subreddits.selected" theme="bootstrap">
+          <ui-select-match placeholder="Filter by Subreddit">Filter by Subreddit: {{$select.selected}}</ui-select-match>
+          <ui-select-choices repeat="item in vm.subreddits | filter: $select.search">
+            <div ng-bind-html="item | highlight: $select.search"></div>
+          </ui-select-choices>
+        </ui-select>
+      </div>
+    </div>
+    <br></br>
+    <div class="row browse" ng-repeat="p in vm.data">
+    		<md-divider class="divider-custom" ></md-divider>
+          <div class="col-sm-2 text-right">
+          	<div class="container votes">
+          		<div class="row">
+    				<span ng-click="p.votes = p.votes + 1" class="glyphicon glyphicon-triangle-top"></span>
+    			</div>
+          		<div class="row vote-count">
+          			{{p.votes}}
+          		</div>
+          		<div class="row">
+    				<span ng-click="p.votes = p.votes - 1" class="glyphicon glyphicon-triangle-bottom"></span>
+    			</div>
+          	</div>
+          </div>
+          <div class="col-sm-8 text-left">
+            <h2 class="post-title">{{p.postTitle}}</h2>
+            <h3>{{p.source || "N/A"}}</h3>
+    				<div></div>
+    				<span class="glyphicon glyphicon-share"></span>
+    				<span class="glyphicon glyphicon-star"></span>
+    				<span class="glyphicon glyphicon-flag"></span>
+    				<span class="glyphicon glyphicon-comment"></span>
+          </div>
+    </div>
+  </div>
+  <div ng-show="vm.radioModel=='subscriptions'" >
+    <div class="row" ng-repeat="c in vm.subreddits" ng-click="vm.subredditSelected(c)">
+      <div class="col-md-offset-4 col-md-1 text-right row-item">
+        <span class="glyphicon glyphicon-minus"></span>
+      </div>
+      <div class="col-md-5 text-left row-item">
+        <h2 class="discover-text">{{c}}</h2>
+      </div>
+  </div>
+  <div ng-show="vm.radioModel=='comments'" >
+
+  </div>
+
+</div>
