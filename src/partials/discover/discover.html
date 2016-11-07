@@ -5,18 +5,71 @@
       <label class="btn btn-primary" ng-model="vm.radioModel" uib-btn-radio="'friends'">Friends Front</label>
       <label class="btn btn-primary" ng-model="vm.radioModel" uib-btn-radio="'popular'">Popular</label>
   </div>
-  <br>
-  <div ng-show="vm.radioModel=='suggested'" class="btn-group" uib-dropdown is-open="status.isopen">
-    <!-- add dropdown-->
-  </div>
-  <br>
-  <div ng-model="vm.radioModel">
-    <div class="row" ng-repeat="c in vm.data[vm.radioModel]">
-      <div class=" row-item">
-        <label class="btn subscribe-button" ng-model="subscribed[c.reddit]" uib-btn-radio="'c.reddit'">Subscribe</label>
-        {{c.reddit}}
-        {{c.description || "N/A"}}
+  <div ng-show="vm.radioModel=='friends'" >
+    <div class="form-group">
+      <div class="col-md-2 col-md-offset-5">
+        <ui-select ng-model="vm.person.selected" theme="bootstrap">
+          <ui-select-match placeholder="Filter by Friend">Filtered by Friend: {{$select.selected.name}}</ui-select-match>
+          <ui-select-choices repeat="item in vm.people | filter: $select.search">
+            <div ng-bind-html="item.name | highlight: $select.search"></div>
+          </ui-select-choices>
+        </ui-select>
+      </div>
+    </div>
+    <br></br>
+    <div class="row" ng-repeat="c in vm.subreddits" ng-if="vm.person.selected==undefined">
+      <div class="col-md-4 col-md-offset-5 text-left row-item">
+        <label class="btn subscribe-button">+</label>
+        {{c}}
+      </div>
+    </div>
+    <div class="row" ng-repeat="c in vm.peopleObj[vm.person.selected.name].front">
+      <div class="col-md-4 col-md-offset-5 text-left row-item">
+        <label class="btn subscribe-button">+</label>
+        {{c}}
       </div>
     </div>
   </div>
-</div>
+  <br>
+  <div ng-show="vm.radioModel=='suggested'" >
+    <div class="form-group">
+      <div class="col-md-2 col-md-offset-5">
+        <ui-select ng-model="vm.subreddits.selected" theme="bootstrap">
+          <ui-select-match placeholder="Filter by Similar to">Filtered by Similar to: {{$select.selected}}</ui-select-match>
+          <ui-select-choices repeat="item in vm.subreddits | filter: $select.search">
+            <div ng-bind-html="item | highlight: $select.search"></div>
+          </ui-select-choices>
+        </ui-select>
+      </div>
+    </div>
+    <br></br>
+    <div class="row" ng-repeat="c in vm.subreddits" ng-if="vm.subreddits.selected==undefined">
+      <div class="col-md-4 col-md-offset-5 text-left row-item">
+        <label class="btn subscribe-button">+</label>
+        {{c}}
+      </div>
+    </div>
+    <div class="row" ng-repeat="c in vm.similarSubreddits[vm.subreddits.selected]">
+      <div class="col-md-4 col-md-offset-5 text-left row-item">
+        <label class="btn subscribe-button">+</label>
+        {{c}}
+      </div>
+    </div>
+  </div>
+  <div ng-show="vm.radioModel=='popular'" >
+    <br></br>
+    <div class="row" ng-repeat="c in vm.subreddits" >
+      <div class="col-md-4 col-md-offset-5 text-left row-item">
+        <label class="btn subscribe-button">+</label>
+        {{c}}
+      </div>
+    </div>
+  </div>
+  <!-- <div class="row" ng-repeat="c in vm.data[vm.radioModel]">
+    <div class=" row-item">
+      <label class="btn subscribe-button" ng-model="subscribed[c.reddit]" uib-btn-radio="'c.reddit'">Subscribe</label>
+      {{c.reddit}}
+      {{c.description || "N/A"}}
+    </div>
+  </div>
+</div> -->
