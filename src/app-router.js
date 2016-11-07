@@ -46,9 +46,9 @@ app.config(function($stateProvider, $urlRouterProvider) {
 	})
 	$stateProvider
 	.state('subreddit', {
-		url: '/subreddit',
-		templateUrl: 'partials/subreddit/subreddit.html',
-		controller: 'subredditController',
+		url: '/browse-subreddit',
+		templateUrl: 'partials/browse-subreddit/browse-subreddit.html',
+		controller: 'browseSubredditController',
 		controllerAs: 'vm',
 	})
 	$stateProvider
@@ -56,6 +56,13 @@ app.config(function($stateProvider, $urlRouterProvider) {
 		url: '/profile',
 		templateUrl: 'partials/profile/profile.html',
 		controller: 'profileController',
+		controllerAs: 'vm',
+	})
+	$stateProvider
+	.state('browse-all', {
+		url: '/browse-all',
+		templateUrl: 'partials/browse/browse.html',
+		controller: 'browseAllController',
 		controllerAs: 'vm',
 	})
 });

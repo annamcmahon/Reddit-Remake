@@ -1,5 +1,6 @@
-discoverModule.controller('discoverController', ['$scope', '$state', '$http', function ($scope, $state, $http) {
+discoverModule.controller('discoverController', ['$scope', '$state', '$http', 'SharedService', function ($scope, $state, $http, SharedService) {
 	var vm = this;
+	console.log(SharedService.getProperty());
   vm.radioModel = 'suggested';
 	vm.subreddits = ["/r/cats", "/r/dogs", "/r/tech", "/r/sports", "/r/cs", "/r/extremesports", "/r/food", "/r/interview", "/r/movies"];
 	vm.friendsData = [{reddit: "cat", description:"Adam"},{reddit: "cat", description:"good"},{reddit: "dogs", description:"good"},{reddit: "dogs", description:"good"}];
@@ -20,7 +21,10 @@ discoverModule.controller('discoverController', ['$scope', '$state', '$http', fu
 		"/r/interview":["/r/cats", "/r/dogs", "/r/tech"],
 		"/r/movies":["/r/cats", "/r/dogs", "/r/tech"]
 	};
-
+	vm.subredditSelected = function(c){
+		SharedService.setProperty(c);
+		$state.go("subreddit");
+	}
 	vm.person = {};
 	vm.peopleObj =
 	{

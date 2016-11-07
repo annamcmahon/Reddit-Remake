@@ -18,12 +18,12 @@
     </div>
     <br></br>
     <br></br>
-    <div class="row" ng-repeat="c in vm.subreddits" ng-if="vm.person.selected==undefined">
+    <div class="row" ng-repeat="c in vm.subreddits" ng-if="vm.person.selected==undefined" ng-click="vm.subredditSelected(c)">
         <div class="col-md-offset-4 col-md-1 text-right row-item">
           <span class="glyphicon glyphicon-plus"></span>
         </div>
         <div class="col-md-5 text-left row-item">
-          <h2>{{c}}</h2>
+          <h2 >{{c}}</h2>
           <h3>subscribed to by: Anna</h3>
         </div>
     </div>
