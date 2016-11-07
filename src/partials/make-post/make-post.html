@@ -1,1 +1,62 @@
-<div>make post</div>
+<h1 class="post-hdr">Post</h1>
+<div class="container post-input">
+<form>
+	<div class="row input">
+		<div class="col-sm-3">
+		</div>
+		<div class="col-sm-4">
+			Title:
+		</div>
+		<div class="col-sm-5 post-input">
+	  		<input type="text" name="title" ng-model="titleContent"><br>
+	  	</div>	
+	</div>
+	<div class="row input">
+				<div class="col-sm-3">
+		</div>
+		<div class="col-sm-4">
+			Text
+		</div>
+		<div class="col-sm-5 post-input">
+	  		<input type="text" name="text-content" ng-model="textContent"><br>
+	  	</div>	
+	</div>
+	<div class="row input">
+		<div class="col-sm-3">
+		</div>
+		<div class="col-sm-4">
+			Image Url
+		</div>
+		<div class="col-sm-5 post-input">
+	  		<input type="text" name="image-url" ng-model="imageUrl"><br>
+	  	</div>	
+	</div>
+		<div class="row input">
+					<div class="col-sm-3">
+		</div>
+		<div class="col-sm-4">
+			Source Url
+		</div>
+		<div class="col-sm-5 post-input">
+	  		<input type="text" name="source-url" ng-model="sourceUrl"><br>
+	  	</div>	
+	</div>
+	<div class="row input">
+		<div class="col-sm-3">
+		</div>
+		<div class="col-sm-4">
+			Subreddit
+		</div>
+		<div class="col-sm-5 post-input">
+	  		<input type="text" name="subreddit" ng-model="subreddit"><br>
+	  	</div>	
+	</div>
+	<div class=row>
+		<div class="col-sm-12" style="text-align: center;">
+			<button class="btn btn-large btn-primary" style="background-color:#616161; border-color:#757575;" type="button" ng-click="checkSub()">Submit</button>
+		</div>
+	</div>
+</form>
+
+<div style="text-align: center; padding-top: 10px;"> {{vm.data}} </div>
+</div>
