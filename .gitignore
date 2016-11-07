@@ -1,3 +1,5 @@
+*/assets/libs/*
+
 /build/
 /benchpress-build/
 .DS_Store

@@ -65,4 +65,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
 		controller: 'browseAllController',
 		controllerAs: 'vm',
 	})
+	$stateProvider
+	.state('comments', {
+		url: '/comments',
+		templateUrl: 'partials/comments/comments.html',
+		controller: 'commentsController',
+		controllerAs: 'vm',
+	})
 });
