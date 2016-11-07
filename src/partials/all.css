@@ -123,12 +123,13 @@ ul.nav a:hover {
 
 .post-btn {
   color: #FF5252;
-
+  padding: 10px;
 }
 
 .post-btn-div {
   text-align: right;
   padding-right: 50px;
+  display: inline-flex
 }
 
 .post-input {

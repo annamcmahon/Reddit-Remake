@@ -1,12 +1,21 @@
 <div ng-controller="browseSubredditController">
-<h1> / {{vm.title}} </h1>
-<div> <!--- add dropdown here -->
-	sort by
-</div>
-<div class="post-btn-div">
+<h1> {{vm.title}} </h1>
+<div class="post-btn-div text-right">
+	<div class="post-btn" ng-if="vm.subscribed==true">
+		<span class="glyphicon glyphicon-plus"></span> Subcribe
+	</div>
+	<div class="post-btn" ng-if="vm.subscribed!==true">
+		<span class="glyphicon glyphicon-minus"></span> Unsubcribe
+	</div>
+	<a href ="#/discover" class="post-btn">
+		<span class="glyphicon glyphicon-th"></span> Explore Similar
+	</a>
 	<a href ="#/make-post" class="post-btn">
 		<span class="glyphicon glyphicon-pencil"></span> Post
 	</a>
+</div>
+<div> <!--- add dropdown here -->
+	sort by
 </div>
 <br></br>
 <div class="container">
@@ -15,13 +24,13 @@
       <div class="col-sm-2 text-right">
       	<div class="container votes">
       		<div class="row">
-				<span ng-click="p.votes = p.votes + 1" class="glyphicon glyphicon-arrow-up"></span>
+				<span ng-click="p.votes = p.votes + 1" class="glyphicon glyphicon-triangle-top"></span>
 			</div>
       		<div class="row vote-count">
       			{{p.votes}}
       		</div>
       		<div class="row">
-				<span ng-click="p.votes = p.votes - 1" class="glyphicon glyphicon-arrow-down"></span>
+				<span ng-click="p.votes = p.votes - 1" class="glyphicon glyphicon-triangle-bottom"></span>
 			</div>
       	</div>
       </div>
