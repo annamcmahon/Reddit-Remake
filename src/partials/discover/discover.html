@@ -1,13 +1,13 @@
 <div ng-controller="discoverController">
   <h1>Discover</h1>
   <div class="btn-group">
-      <label class="btn btn-primary" ng-model="vm.radioModel" uib-btn-radio="'suggested'">Suggested</label>
-      <label class="btn btn-primary" ng-model="vm.radioModel" uib-btn-radio="'friends'">Friends Front</label>
-      <label class="btn btn-primary" ng-model="vm.radioModel" uib-btn-radio="'popular'">Popular</label>
+      <label class="btn  secondary-nav-button" ng-model="vm.radioModel" uib-btn-radio="'suggested'">Suggested</label>
+      <label class="btn secondary-nav-button" ng-model="vm.radioModel" uib-btn-radio="'friends'">Friends Front</label>
+      <label class="btn secondary-nav-button" ng-model="vm.radioModel" uib-btn-radio="'popular'">Popular</label>
   </div>
   <div ng-show="vm.radioModel=='friends'" >
     <div class="form-group">
-      <div class="col-md-2 col-md-offset-5">
+      <div class="col-md-4 col-md-offset-4">
         <ui-select ng-model="vm.person.selected" theme="bootstrap">
           <ui-select-match placeholder="Filter by Friend">Filtered by Friend: {{$select.selected.name}}</ui-select-match>
           <ui-select-choices repeat="item in vm.people | filter: $select.search">
@@ -17,23 +17,30 @@
       </div>
     </div>
     <br></br>
+    <br></br>
     <div class="row" ng-repeat="c in vm.subreddits" ng-if="vm.person.selected==undefined">
-      <div class="col-md-4 col-md-offset-5 text-left row-item">
-        <label class="btn subscribe-button">+</label>
-        {{c}}
-      </div>
+        <div class="col-md-offset-4 col-md-1 text-right row-item">
+          <span class="glyphicon glyphicon-plus"></span>
+        </div>
+        <div class="col-md-5 text-left row-item">
+          <h2>{{c}}</h2>
+          <h3>subscribed to by: Anna</h3>
+        </div>
     </div>
     <div class="row" ng-repeat="c in vm.peopleObj[vm.person.selected.name].front">
-      <div class="col-md-4 col-md-offset-5 text-left row-item">
-        <label class="btn subscribe-button">+</label>
-        {{c}}
+      <div class="col-md-offset-4 col-md-1 text-right row-item">
+        <span class="glyphicon glyphicon-plus"></span>
+      </div>
+      <div class="col-md-5 text-left row-item">
+        <h2>{{c}}</h2>
+        <h3>subscribed to by: Anna</h3>
       </div>
     </div>
   </div>
   <br>
   <div ng-show="vm.radioModel=='suggested'" >
     <div class="form-group">
-      <div class="col-md-2 col-md-offset-5">
+      <div class="col-md-4 col-md-offset-4">
         <ui-select ng-model="vm.subreddits.selected" theme="bootstrap">
           <ui-select-match placeholder="Filter by Similar to">Filtered by Similar to: {{$select.selected}}</ui-select-match>
           <ui-select-choices repeat="item in vm.subreddits | filter: $select.search">
@@ -43,25 +50,35 @@
       </div>
     </div>
     <br></br>
+    <br></br>
     <div class="row" ng-repeat="c in vm.subreddits" ng-if="vm.subreddits.selected==undefined">
-      <div class="col-md-4 col-md-offset-5 text-left row-item">
-        <label class="btn subscribe-button">+</label>
-        {{c}}
+      <div class="col-md-offset-4 col-md-1 text-right row-item">
+        <span class="glyphicon glyphicon-plus"></span>
+      </div>
+      <div class="col-md-5 text-left row-item">
+        <h2>{{c}}</h2>
+        <h3>similar to: sports</h3>
       </div>
     </div>
     <div class="row" ng-repeat="c in vm.similarSubreddits[vm.subreddits.selected]">
-      <div class="col-md-4 col-md-offset-5 text-left row-item">
-        <label class="btn subscribe-button">+</label>
-        {{c}}
+      <div class="col-md-offset-4 col-md-1 text-right row-item">
+        <span class="glyphicon glyphicon-plus"></span>
+      </div>
+      <div class="col-md-5 text-left row-item">
+        <h2>{{c}}</h2>
+        <h3>similar to: sports</h3>
       </div>
     </div>
   </div>
   <div ng-show="vm.radioModel=='popular'" >
     <br></br>
+    <br></br>
     <div class="row" ng-repeat="c in vm.subreddits" >
-      <div class="col-md-4 col-md-offset-5 text-left row-item">
-        <label class="btn subscribe-button">+</label>
-        {{c}}
+      <div class="col-md-offset-4 col-md-1 text-right row-item">
+        <span class="glyphicon glyphicon-plus"></span>
+      </div>
+      <div class="col-md-5 text-left row-item">
+        <h2>{{c}}</h2>
       </div>
     </div>
   </div>

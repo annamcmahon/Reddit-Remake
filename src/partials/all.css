@@ -7,11 +7,9 @@
   margin-left:100px;
 }
 .subscribe-button{
-  background-color: rgba(255, 0, 0);
+  background-color: rgba(215, 215, 215, .5);
 }
-.subscribe-button,
 .subscribe-button:active,
-.subscribe-button:visited,
 .subscribe-button:focus {
     background-color: rgba(215, 215, 215, .7);
     border-color: rgba(215, 215, 215, .7);
@@ -29,6 +27,20 @@
 
   margin-top: -15px;
 }
+.secondary-nav-button{
+  background-color: #F5F5F5;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: :#212121!important;
+  border-color: currentColor;
+}
+.secondary-nav-button:hover{
+  background-color:#9E9E9E;
+}
+.secondary-nav-button.active,.secondary-nav-button.focus, .secondary-nav-button.hover, .secondary-nav-button.visited{
+  background-color:#9E9E9E;
+
+}
 
 .navbar { /* TODO: the rounded border should be removed here */
   background-color: #9E9E9E;
@@ -44,8 +56,8 @@
   color: #F5F5F5;
 }
 
-ul.nav a:hover { 
-  color: #616161 !important; 
+ul.nav a:hover {
+  color: #616161 !important;
 }
 
 .glyphicon-arrow-up {
@@ -54,6 +66,7 @@ ul.nav a:hover {
 
 .glyphicon-arrow-down {
   color: #FF5252;
+  /*font-size: 2.2em;*/
 }
 
 .votes {
@@ -61,11 +74,38 @@ ul.nav a:hover {
   margin: 0 auto;
   margin-top: 10%;
 }
-
+/*
+.glyphicon-share:hover,
+.glyphicon-share:visited,
+.glyphicon-share:{
+  color: #0000e5;
+}
+.glyphicon-comment:hover,
+.glyphicon-comment:visited{
+  color: #add8e6;
+}
+.glyphicon-star:hover,
+.glyphicon-star:active{
+  color: #FFFF66;
+}
+.glyphicon-flag:hover:hover,
+.glyphicon-flag:active{
+  color: #FF5252;
+}
+*/
+.glyphicon-plus:hover,
+.glyphicon-plus.active{
+  color: #add8e6;
+}
 
 .browse {
-  border-top: 2px solid black;
+  padding-top: 5px;
+  padding-bottom: 5px;
   text-align: left;
+}
+
+.divider-custom{
+  color: #BDBDBD;
 }
 
 .article-icons {
@@ -103,3 +143,43 @@ ul.nav a:hover {
 .input {
   padding-bottom: 15px;
 }
+
+h1 {
+	font-family: 'Roboto', sans-serif;
+	font-size: 24px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+  color: :#212121!important;
+}
+h2 {
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+  color: :#212121!important;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+h3 {
+	font-family: 'Roboto', sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+  color: #757575 !important;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+p {
+	font-family: 'Roboto', sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+  color: #212121 !important;
+}
+/*    font-family:  'Roboto', sans-serif;
+    src: url("https://fonts.googleapis.com/css?family=Roboto");
+}*/
