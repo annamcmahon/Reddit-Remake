@@ -145,40 +145,34 @@ ul.nav a:hover {
   padding-bottom: 15px;
 }
 
+h1, h2, h3, p {
+  font-family: 'Roboto', sans-serif !important;
+  font-style: normal !important;
+  font-variant: normal !important;
+}
+
 h1 {
-	font-family: 'Roboto', sans-serif;
-	font-size: 24px;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 500;
-  color: :#212121!important;
+  font-size: 24px;
+  font-weight: 500;
+  color: #212121 !important;
 }
 h2 {
-	font-family: 'Roboto', sans-serif;
-	font-size: 16px;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 500;
-  color: :#212121!important;
+  font-size: 16px;
+  font-weight: 500;
+  color: #212121 !important;
   margin-top: 0px;
   margin-bottom: 0px;
 }
 h3 {
-	font-family: 'Roboto', sans-serif;
-	font-size: 12px;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 500;
+  font-size: 12px;
+  font-weight: 500;
   color: #757575 !important;
   margin-top: 0px;
   margin-bottom: 0px;
 }
 p {
-	font-family: 'Roboto', sans-serif;
-	font-size: 12px;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 400;
+  font-size: 12px;
+  font-weight: 400;
   color: #212121 !important;
 }
 /*    font-family:  'Roboto', sans-serif;
