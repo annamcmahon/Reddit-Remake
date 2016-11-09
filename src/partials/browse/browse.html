@@ -1,7 +1,7 @@
 <div ng-controller="browseController">
 <h1> / {{vm.title}} </h1>
 <div> <!--- add dropdown here -->
-	sort by
+	sort by<span class="caret"></span>
 </div>
 <div class="post-btn-div">
 	<a href ="#/make-post" class="post-btn">
@@ -9,36 +9,58 @@
 	</a>
 </div>
 <br></br>
-<div class="row browse" ng-repeat="p in vm.data">
+<div class="container"> <!-- this is needed for the bootstrap grid i'm using here -->
+<div class="row browse" ng-repeat="p in vm.data" style="padding-bottom:20px;">
 		<md-divider class="divider-custom" ></md-divider>
+	<div class="col-sm-2">
+	</div>
+	<div class="col-sm-1 numbers">
+		<div class="row"></div>
+		<div class="row">	<h2 style="text-align:right; padding-top: 20px;">{{p.votes}}</h2></div>
+		<div class="row"></div>
 
-      <div class="col-sm-2 text-right">
-      	<div class="container votes">
+	</div>
+
+      <div class="col-sm-1 text-right">
+      	<div class="container votes" style="text-align:center">
       		<div class="row">
-				<span ng-click="p.votes = p.votes + 1" class="glyphicon glyphicon-triangle-top"></span>
+				<span ng-click="p.votes = p.votes + 1" class="glyphicon glyphicon-triangle-top hover" style="padding-top:10px;"></span>
 			</div>
-      		<div class="row vote-count">
-      			{{p.votes}}
-      		</div>
       		<div class="row">
-				<span ng-click="p.votes = p.votes - 1" class="glyphicon glyphicon-triangle-bottom"></span>
+				<span ng-click="p.votes = p.votes - 1" class="glyphicon glyphicon-triangle-bottom hover"></span>
 			</div>
       	</div>
       </div>
-			<div class="col-sm-1 text-left">
+		<div class="col-sm-1 text-left">
 				<img src="https://i.redd.it/5gf5qfi61jsx.jpg" alt="Cat pic" class="row-image">
-			</div>
+		</div>
       <div class="col-sm-7 text-left">
-        <a href="#/comments" class="post-btn-title">
-          <h2 class="post-title">{{p.postTitle}}</h2>
-          <h3>{{p.source || "N/A"}}</h3>
-        </a>
-				<div></div>
-				<span class="glyphicon glyphicon-share" rel="tooltip" title="share"></span>
-				<span class="glyphicon glyphicon-star" rel="tooltip" title="star"></span>
-				<span class="glyphicon glyphicon-flag" rel="tooltip" title="flag"></span>
-				<span class="glyphicon glyphicon-comment" rel="tooltip" title="comment"></span>
+      	<div class ="container">
+      		<div class="row">
+		        <a href="#/comments" class="post-btn-title">
+		          <h2 class="post-title">{{p.postTitle}}</h2>
+		          <h3>{{p.source || "N/A"}}</h3>
+		        </a>
+      		</div>
+      		<div class="row" style="color:#9E9E9E;">
+      			<div class="col-sm-1" style="padding-left: 0px;">
+				<span class="glyphicon glyphicon-share hover "rel="tooltip" title="share"></span>
+
+      			</div>
+      			<div class="col-sm-1" style="padding-left: 0px;">
+				<span class="glyphicon glyphicon-star hover" rel="tooltip" title="star"></span>
+      			</div>
+      			<div class="col-sm-1" style="padding-left: 0px;">
+				<span class="glyphicon glyphicon-flag hover" rel="tooltip" title="flag"></span>
+      			</div>
+      			<div class="col-sm-1" style="padding-left: 0px;">
+				<span class="glyphicon glyphicon-comment hover" rel="tooltip" title="comment"></span>
+      			</div>
+
+      		</div>
+
+      	</div>
       </div>
 </div>
-
+</div>
 </div>
