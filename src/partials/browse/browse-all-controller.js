@@ -2,5 +2,30 @@ browseModule.controller('browseAllController', ['$scope', '$state', '$http','Sha
 	var vm = this;
   vm.title = "All";
   vm.style = "";
-	vm.data = [{postTitle: "Just got my senior pics back", source:"source1", votes: 9},{postTitle: "Another irrelevant post", source:"source2", votes: 7},{postTitle: "Another irrelevant post", source:"source3", votes: 6},{postTitle: "Another irrelevant post", source:"source4", votes:3}];
+
+  	vm.toggleDown = function(item) {
+		item.downArrow = !item.downArrow;
+	};
+
+	vm.toggleUp = function(item) {
+		item.upArrow = !item.upArrow;
+	};
+
+
+	vm.toggleFlag = function(item) {
+		item.flag = !item.flag;
+	};
+
+	vm.toggleFav = function(item) {
+		item.fav = !item.fav;
+	};
+
+	vm.toggleComment = function(item) {
+		item.comment= !item.coment;
+	};
+
+	vm.toggleShare = function(item) {
+		item.share = !item.share;
+	};
+	vm.data = [{postTitle: "Happy Monday", source:"imgur", votes: 9, pic:"http://i.imgur.com/R0CNlPY.jpg",downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false},{postTitle: "What's next?", source:"cnn", votes: 7,pic:"http://i.imgur.com/2WWJ5af.jpg",downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false},{postTitle: "A look into the future", source:"imgur", votes: 6, pic:"http://i.imgur.com/5jLWFZZ.jpg",downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false},{postTitle: "Lazy Day", source:"aww", votes:3,pic:"http://i.imgur.com/ySbhL8E.png",downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false}];
 }]);

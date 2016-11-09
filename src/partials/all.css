@@ -68,12 +68,11 @@ ul.nav a:hover {
 }
 
 .glyphicon-triangle-top {
-  color: #212121;
   font-size: 2.0em;
 }
 
 .glyphicon-triangle-bottom {
-  color: #212121;
+  /*color: #616161;*/
   font-size: 2.0em;
 }
 .glyphicon-triangle-top:hover {
@@ -184,7 +183,7 @@ h1, h2, h3, p {
 .row-image{
   padding-top: 20px;
   height: 80px;
-  width: auto;
+  width: 60px;
 }
 h1 {
   font-size: 24px;
@@ -232,7 +231,7 @@ p {
 }
 
 .container {
-  width: 100%;
+  /* width: 100%; */
 }
 
 .hover:hover, .hover:visited {
@@ -241,3 +240,6 @@ p {
 /*    font-family:  'Roboto', sans-serif;
     src: url("https://fonts.googleapis.com/css?family=Roboto");
 }*/
+.iconsPost:hover {
+  color: black !important;
+}

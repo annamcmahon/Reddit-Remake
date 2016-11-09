@@ -9,7 +9,7 @@
 	</a>
 </div>
 <br></br>
-<div class="container"> <!-- this is needed for the bootstrap grid i'm using here -->
+<div class="container"> <!-- this is needed for the bootstrap grid i'm using here to control the width of the rows -->
 <div class="row browse" ng-repeat="p in vm.data" style="padding-bottom:20px;">
 		<md-divider class="divider-custom" ></md-divider>
 	<div class="col-sm-2">
@@ -22,17 +22,17 @@
 	</div>
 
       <div class="col-sm-1 text-right">
-      	<div class="container votes" style="text-align:center">
+      	<div class="container votes" style="text-align:center;">
       		<div class="row">
-				<span ng-click="p.votes = p.votes + 1" class="glyphicon glyphicon-triangle-top hover" style="padding-top:10px;"></span>
+				<span ng-click="vm.toggleUp(p); p.votes = p.votes + 1;" class="glyphicon glyphicon-triangle-top hover" style="padding-top:10px" ng-style="{ 'color' : (p.upArrow) ? '#9E9E9E' : '#616161'}"></span>
 			</div>
       		<div class="row">
-				<span ng-click="p.votes = p.votes - 1" class="glyphicon glyphicon-triangle-bottom hover"></span>
+				<span ng-click="vm.toggleDown(p); p.votes = p.votes - 1;" class="glyphicon glyphicon-triangle-bottom hover" ng-style="{ 'color' : (p.downArrow) ? '#9E9E9E' : '#616161' }"></span>
 			</div>
       	</div>
       </div>
 		<div class="col-sm-1 text-left">
-				<img src="https://i.redd.it/5gf5qfi61jsx.jpg" alt="Cat pic" class="row-image">
+				<img src={{p.pic}} alt="Cat pic" class="row-image">
 		</div>
       <div class="col-sm-7 text-left">
       	<div class ="container">
@@ -43,18 +43,18 @@
 		        </a>
       		</div>
       		<div class="row" style="color:#9E9E9E;">
-      			<div class="col-sm-1" style="padding-left: 0px;">
-				<span class="glyphicon glyphicon-share hover"></span>
+      			<div class="col-sm-1 iconsPost" style="padding-left: 0px;" >
+				<span class="glyphicon glyphicon-share hover" ng-click="vm.toggleShare(p)" ng-style="{ 'color' : (p.share) ? '#9E9E9E' : '#616161' }"></span>
 
       			</div>
-      			<div class="col-sm-1" style="padding-left: 0px;">
-				<span class="glyphicon glyphicon-star hover"></span>
+      			<div class="col-sm-1 iconsPost" style="padding-left: 0px;">
+				<span class="glyphicon glyphicon-star hover" ng-click="vm.toggleFav(p)" ng-style="{ 'color' : (p.fav) ? '#9E9E9E' : '#616161' }"></span>
       			</div>
-      			<div class="col-sm-1" style="padding-left: 0px;">
-				<span class="glyphicon glyphicon-flag hover"></span>
+      			<div class="col-sm-1 iconsPost" style="padding-left: 0px;">
+				<span class="glyphicon glyphicon-flag hover" ng-click="vm.toggleFlag(p)" ng-style="{ 'color' : (p.flag) ? '#9E9E9E' : '#616161' }"></span>
       			</div>
-      			<div class="col-sm-1" style="padding-left: 0px;">
-				<span class="glyphicon glyphicon-comment hover"></span>
+      			<div class="col-sm-1 iconsPost" style="padding-left: 0px;">
+				<span class="glyphicon glyphicon-comment hover" ng-click="vm.toggleComment(p)" ng-style="{ 'color' : (p.comment) ? '#9E9E9E' : '#616161' }"></span>
       			</div>
 
       		</div>
