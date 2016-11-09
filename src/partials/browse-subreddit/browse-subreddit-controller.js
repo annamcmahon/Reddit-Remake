@@ -2,7 +2,7 @@ browseModule.controller('browseSubredditController', ['$scope', '$state', '$http
 	var vm = this;
 	vm.title = SharedService.getProperty();
 	vm.subscribed = false;
-	vm.data = [{postTitle: "Another irrelevant post", source:"source1", votes: 9},{postTitle: "Another irrelevant post", source:"source2", votes: 7},{postTitle: "Another irrelevant post", source:"source3", votes: 6},{postTitle: "Another irrelevant post", source:"source4", votes:3}];
+	vm.data = [{postTitle: "It's pay day", source:"source1", votes: 9,pic:"http://i.imgur.com/4AiXzf8.jpg",downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false},{postTitle: "Another irrelevant post", source:"source2", votes: 7,pic:"http://i.imgur.com/lVlPvCB.gif",downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false},{postTitle: "Another irrelevant post", source:"source3", votes: 6,pic:"http://i.imgur.com/6tqUuOw.jpg",downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false},{postTitle: "Just got my senior pics back", source:"source4", votes:3,pic:"https://i.redd.it/5gf5qfi61jsx.jpg",downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false}];
 	vm.dynamicPopover = {
     content: 'Hello, World!',
     templateUrl: 'myPopoverTemplate.html',
@@ -39,7 +39,36 @@ vm.postData = function(){
 	vm.newPostTitle= '';
 }
 
+vm.toggleDown = function(item) {
+		item.downArrow = !item.downArrow;
+	};
+
+vm.toggleUp = function(item) {
+	item.upArrow = !item.upArrow;
+};
+
+
+vm.toggleFlag = function(item) {
+	item.flag = !item.flag;
+};
+
+vm.toggleFav = function(item) {
+	item.fav = !item.fav;
+};
+
+vm.toggleComment = function(item) {
+	item.comment= !item.coment;
+};
+
+vm.toggleShare = function(item) {
+	item.share = !item.share;
+};
+
+
 }]);
 $(document).ready(function(){
     $("[rel=tooltip]").tooltip({ placement: 'top'});
 });
+
+
+	
