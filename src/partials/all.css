@@ -113,8 +113,6 @@ ul.nav a:hover {
 }
 
 .browse {
-  padding-top: 5px;
-  padding-bottom: 5px;
   text-align: left;
 }
 
@@ -170,10 +168,18 @@ h1, h2, h3, p {
   font-variant: normal !important;
 }
 
+.browse:hover{
+  background-color: #eff0f1;
+}
+.row-image{
+  padding-top: 20px;
+  height: 80px;
+  width: auto;
+}
 h1 {
   font-size: 24px;
   font-weight: 500;
-  color: #212121 !important;
+  color: #FF5252 !important;
   font-weight: bold;
 }
 h2 {

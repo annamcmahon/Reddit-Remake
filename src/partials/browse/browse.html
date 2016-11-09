@@ -11,6 +11,7 @@
 <br></br>
 <div class="row browse" ng-repeat="p in vm.data">
 		<md-divider class="divider-custom" ></md-divider>
+
       <div class="col-sm-2 text-right">
       	<div class="container votes">
       		<div class="row">
@@ -24,7 +25,10 @@
 			</div>
       	</div>
       </div>
-      <div class="col-sm-8 text-left">
+			<div class="col-sm-1 text-left">
+				<img src="https://i.redd.it/5gf5qfi61jsx.jpg" alt="Cat pic" class="row-image">
+			</div>
+      <div class="col-sm-7 text-left">
         <a href="#/comments" class="post-btn-title">
           <h2 class="post-title">{{p.postTitle}}</h2>
           <h3>{{p.source || "N/A"}}</h3>
