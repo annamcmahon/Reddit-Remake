@@ -47,7 +47,7 @@
 }
 
 .navbar { /* TODO: the rounded border should be removed here */
-  background-color: #9E9E9E;
+  background-color: #616161;
   border: 0;
 
 }
@@ -107,6 +107,10 @@ ul.nav a:hover {
   color: #FF5252;
 }
 */
+.big-plus:before{
+  font-size: 1.4em;
+}
+
 .glyphicon-plus:hover,
 .glyphicon-plus.active{
   color: #9E9E9E;
@@ -160,6 +164,12 @@ ul.nav a:hover {
 
 .input {
   padding-bottom: 15px;
+}
+.post-content{
+  background-color: #eff0f1;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  border-radius: 30px;
 }
 
 h1, h2, h3, p {
