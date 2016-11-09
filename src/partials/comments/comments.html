@@ -3,4 +3,42 @@
 Just got my senior pics back
 </h1>
 <img src="https://i.redd.it/5gf5qfi61jsx.jpg" alt="Cat pic" height="auto" width="50%">
+<h2>
+Comments
+</h2>
+<!--add filter-->
+<br></br>
+<!-- <div ng-controller="commentsController">
+  <div class="col-md-4 col-md-offset-4 padded-div">
+    <input placeholder="Add a Comment ..." type="text" class="form-control" >
+    <br></br>
+    <label class="btn  secondary-nav-button " ng-click="vm.addComment">comment</label>
+  </div> -->
+<div class= "padded-top">
+<div class="row browse " ng-repeat="p in vm.data">
+    <md-divider class="divider-custom" ></md-divider>
+      <div class="col-sm-2 text-right">
+        <div class="container votes">
+          <div class="row">
+        <span ng-click="p.votes = p.votes + 1" class="glyphicon glyphicon-triangle-top"></span>
+      </div>
+          <div class="row vote-count">
+            {{p.votes}}
+          </div>
+          <div class="row">
+        <span ng-click="p.votes = p.votes - 1" class="glyphicon glyphicon-triangle-bottom"></span>
+      </div>
+        </div>
+      </div>
+      <div class="col-sm-8 text-left">
+        <h2 >{{p.postTitle}}</h2>
+        <h3>{{p.source || "N/A"}}</h3>
+        <div></div>
+        <span class="glyphicon glyphicon-share"></span>
+        <span class="glyphicon glyphicon-star"></span>
+        <span class="glyphicon glyphicon-flag"></span>
+      </div>
+</div>
+</div>
+</div>
 </center>
