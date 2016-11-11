@@ -20,17 +20,14 @@
     </div>
     <br></br>
 <div class="container">
-<div class="row browse" ng-repeat="p in vm.data" style="padding-bottom:20px;">
-    <md-divider class="divider-custom" ></md-divider>
+<div class="row browse row-border" ng-repeat="p in vm.data" style="padding-bottom:20px;">
   <div class="col-sm-2">
   </div>
   <div class="col-sm-1 numbers">
     <div class="row"></div>
     <div class="row"> <h2 style="text-align:right; padding-top: 20px;">{{p.votes}}</h2></div>
     <div class="row"></div>
-
   </div>
-
       <div class="col-sm-1 text-right">
         <div class="container votes" style="text-align:center;">
           <div class="row">
@@ -41,9 +38,9 @@
       </div>
         </div>
       </div>
-    <div class="col-sm-1 text-left">
-         <div ng-show="p.pic != null"><img src={{p.pic}} alt="Cat pic" class="row-image"> </div>
-    </div>
+      <div class="col-sm-1 text-left">
+           <div ng-show="p.pic != null"><img src={{p.pic}} alt="Cat pic" class="row-image"> </div>
+      </div>
       <div class="col-sm-7 text-left">
         <div class ="container">
           <div class="row">
@@ -54,28 +51,24 @@
           </div>
           <div class="row" style="color:#9E9E9E;">
             <div class="col-sm-1 iconsPost" style="padding-left: 0px;" >
-        <span class="glyphicon glyphicon-share hover" ng-click="vm.toggleShare(p)" ng-style="{ 'color' : (p.share) ? '#9E9E9E' : '#616161' }" rel="tooltip"></span>
-
+              <span class="glyphicon glyphicon-share hover" ng-click="vm.toggleShare(p)" ng-style="{ 'color' : (p.share) ? '#9E9E9E' : '#616161' }" rel="tooltip"></span>
             </div>
             <div class="col-sm-1 iconsPost" style="padding-left: 0px;">
-        <span class="glyphicon glyphicon-star hover" ng-click="vm.toggleFav(p)" ng-style="{ 'color' : (p.fav) ? '#9E9E9E' : '#616161' }" rel="tooltip"></span>
+              <span class="glyphicon glyphicon-star hover" ng-click="vm.toggleFav(p)" ng-style="{ 'color' : (p.fav) ? '#9E9E9E' : '#616161' }" rel="tooltip"></span>
             </div>
             <div class="col-sm-1 iconsPost" style="padding-left: 0px;">
-        <span class="glyphicon glyphicon-flag hover" ng-click="vm.toggleFlag(p)" ng-style="{ 'color' : (p.flag) ? '#9E9E9E' : '#616161' }" rel="tooltip"></span>
+              <span class="glyphicon glyphicon-flag hover" ng-click="vm.toggleFlag(p)" ng-style="{ 'color' : (p.flag) ? '#9E9E9E' : '#616161' }" rel="tooltip"></span>
             </div>
             <div class="col-sm-1 iconsPost" style="padding-left: 0px;">
-        <span class="glyphicon glyphicon-comment hover" ng-click="vm.toggleComment(p)" ng-style="{ 'color' : (p.comment) ? '#9E9E9E' : '#616161' }" rel="tooltip"></span>
+              <span class="glyphicon glyphicon-comment hover" ng-click="vm.toggleComment(p)" ng-style="{ 'color' : (p.comment) ? '#9E9E9E' : '#616161' }" rel="tooltip"></span>
             </div>
-
           </div>
-
         </div>
       </div>
 </div>
 </div>
-  </div>
-  <br>
-  <div ng-show="vm.radioModel=='posts'" >
+</div>
+<div ng-show="vm.radioModel=='posts'" >
     <div class="form-group">
       <div class="col-md-4 col-md-offset-4">
         <ui-select ng-model="vm.subreddits.selected" theme="bootstrap">
@@ -88,17 +81,14 @@
     </div>
     <br></br>
 <div class="container">
-<div class="row browse" ng-repeat="p in vm.data" style="padding-bottom:20px;">
-    <md-divider class="divider-custom" ></md-divider>
+<div class="row browse row-border" ng-repeat="p in vm.data" style="padding-bottom:20px;">
   <div class="col-sm-2">
   </div>
   <div class="col-sm-1 numbers">
     <div class="row"></div>
     <div class="row"> <h2 style="text-align:right; padding-top: 20px;">{{p.votes}}</h2></div>
     <div class="row"></div>
-
   </div>
-
       <div class="col-sm-1 text-right">
         <div class="container votes" style="text-align:center;">
           <div class="row">
@@ -122,26 +112,23 @@
           </div>
           <div class="row" style="color:#9E9E9E;">
             <div class="col-sm-1 iconsPost" style="padding-left: 0px;" >
-        <span class="glyphicon glyphicon-share hover" ng-click="vm.toggleShare(p)" ng-style="{ 'color' : (p.share) ? '#9E9E9E' : '#616161' }" rel="tooltip"></span>
-
+              <span class="glyphicon glyphicon-share hover" ng-click="vm.toggleShare(p)" ng-style="{ 'color' : (p.share) ? '#9E9E9E' : '#616161' }" rel="tooltip"></span>
             </div>
             <div class="col-sm-1 iconsPost" style="padding-left: 0px;">
-        <span class="glyphicon glyphicon-star hover" ng-click="vm.toggleFav(p)" ng-style="{ 'color' : (p.fav) ? '#9E9E9E' : '#616161' }" rel="tooltip"></span>
+              <span class="glyphicon glyphicon-star hover" ng-click="vm.toggleFav(p)" ng-style="{ 'color' : (p.fav) ? '#9E9E9E' : '#616161' }" rel="tooltip"></span>
             </div>
             <div class="col-sm-1 iconsPost" style="padding-left: 0px;">
-        <span class="glyphicon glyphicon-flag hover" ng-click="vm.toggleFlag(p)" ng-style="{ 'color' : (p.flag) ? '#9E9E9E' : '#616161' }" rel="tooltip"></span>
+              <span class="glyphicon glyphicon-flag hover" ng-click="vm.toggleFlag(p)" ng-style="{ 'color' : (p.flag) ? '#9E9E9E' : '#616161' }" rel="tooltip"></span>
             </div>
             <div class="col-sm-1 iconsPost" style="padding-left: 0px;">
-        <span class="glyphicon glyphicon-comment hover" ng-click="vm.toggleComment(p)" ng-style="{ 'color' : (p.comment) ? '#9E9E9E' : '#616161' }" rel="tooltip"></span>
+              <span class="glyphicon glyphicon-comment hover" ng-click="vm.toggleComment(p)" ng-style="{ 'color' : (p.comment) ? '#9E9E9E' : '#616161' }" rel="tooltip"></span>
             </div>
-
           </div>
-
         </div>
       </div>
 </div>
 </div>
-  </div>
+</div>
   <div ng-show="vm.radioModel=='subscriptions'" >
     <div class="row" ng-repeat="c in vm.subreddits" ng-click="vm.subredditSelected(c)">
       <div class="col-md-offset-4 col-md-1 text-right row-item">
