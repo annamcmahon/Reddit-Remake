@@ -3,20 +3,20 @@ browseModule.controller('browseController', ['$scope', '$state', '$http','Shared
 	vm.title = "Front";
 
 	vm.toggleDown = function(item) {
-		item.downArrow = !item.downArrow;
+		SharedService.downvotePost(item.id);
 	};
 
 	vm.toggleUp = function(item) {
-		item.upArrow = !item.upArrow;
+		SharedService.upvotePost(item.id);
 	};
 
 
 	vm.toggleFlag = function(item) {
-		item.flag = !item.flag;
+		SharedService.setFlagged(item.id);
 	};
 
 	vm.toggleFav = function(item) {
-		item.fav = !item.fav;
+		SharedService.setSaved(item.id);
 	};
 
 	vm.toggleComment = function(item) {
@@ -26,17 +26,12 @@ browseModule.controller('browseController', ['$scope', '$state', '$http','Shared
 	vm.toggleShare = function(item) {
 		item.share = !item.share;
 	};
+	vm.setDetail = function(p){
+		console.log("hey");
+		vm.detail= p;
+	}
+	vm.data = SharedService.getAllPosts();
 
-	vm.data = [
-	{postTitle: "Just got my senior pics back", source:"source1", votes: 9, pic:"https://i.redd.it/5gf5qfi61jsx.jpg",downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false},
-	{postTitle: "And you think you had a rough day", source:"imgur", votes: 7, pic:"https://i.redd.it/qi9qollfydwx.jpg",downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false},
-	{postTitle: "Adopt today!", source:"spca.com", votes: 6, pic:"http://i.imgur.com/uloykHU.jpg",downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false},
-	{postTitle: "Oh deer", source:"source4", votes:3,pic:"http://i.imgur.com/UbhuYRv.jpg", downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false},
-	{postTitle: "Just got my senior pics back", source:"source1", votes: 9, pic:"https://i.redd.it/5gf5qfi61jsx.jpg",downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false},
-	{postTitle: "And you think you had a rough day", source:"imgur", votes: 7, pic:"https://i.redd.it/qi9qollfydwx.jpg",downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false},
-	{postTitle: "Adopt today!", source:"spca.com", votes: 6, pic:"http://i.imgur.com/uloykHU.jpg",downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false},
-	{postTitle: "Oh deer", source:"source4", votes:3,pic:"http://i.imgur.com/UbhuYRv.jpg", downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false}
-];
 }]);
 $(document).ready(function(){
     $("[rel=tooltip]").tooltip({ placement: 'top'});

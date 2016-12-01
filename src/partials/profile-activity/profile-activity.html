@@ -20,7 +20,7 @@
     </div>
     <br></br>
 <div class="container">
-<div class="row browse row-border" ng-repeat="p in vm.data" style="padding-bottom:20px;">
+<div class="row browse row-border" ng-repeat="p in vm.savedPosts" style="padding-bottom:20px;">
   <div class="col-sm-2">
   </div>
   <div class="col-sm-1 numbers">
@@ -31,10 +31,10 @@
       <div class="col-sm-1 text-right">
         <div class="container votes" style="text-align:center;">
           <div class="row">
-        <span ng-click="vm.toggleUp(p); p.votes = p.votes + 1;" class="glyphicon glyphicon-triangle-top hover" style="padding-top:10px" ng-style="{ 'color' : (p.upArrow) ? '#9E9E9E' : '#616161'}"></span>
+        <span ng-click="vm.toggleUp(p);" class="glyphicon glyphicon-triangle-top hover" style="padding-top:10px" ng-style="{ 'color' : (p.upArrow) ? '#9E9E9E' : '#616161'}"></span>
       </div>
           <div class="row">
-        <span ng-click="vm.toggleDown(p); p.votes = p.votes - 1;" class="glyphicon glyphicon-triangle-bottom hover" ng-style="{ 'color' : (p.downArrow) ? '#9E9E9E' : '#616161' }"></span>
+        <span ng-click="vm.toggleDown(p);" class="glyphicon glyphicon-triangle-bottom hover" ng-style="{ 'color' : (p.downArrow) ? '#9E9E9E' : '#616161' }"></span>
       </div>
         </div>
       </div>
@@ -81,7 +81,7 @@
     </div>
     <br></br>
 <div class="container">
-<div class="row browse row-border" ng-repeat="p in vm.data" style="padding-bottom:20px;">
+<div class="row browse row-border" ng-repeat="p in vm.myPosts" style="padding-bottom:20px;">
   <div class="col-sm-2">
   </div>
   <div class="col-sm-1 numbers">
@@ -92,10 +92,10 @@
       <div class="col-sm-1 text-right">
         <div class="container votes" style="text-align:center;">
           <div class="row">
-        <span ng-click="vm.toggleUp(p); p.votes = p.votes + 1;" class="glyphicon glyphicon-triangle-top hover" style="padding-top:10px" ng-style="{ 'color' : (p.upArrow) ? '#9E9E9E' : '#616161'}"></span>
+        <span ng-click="vm.toggleUp(p);" class="glyphicon glyphicon-triangle-top hover" style="padding-top:10px" ng-style="{ 'color' : (p.upArrow) ? '#9E9E9E' : '#616161'}"></span>
       </div>
           <div class="row">
-        <span ng-click="vm.toggleDown(p); p.votes = p.votes - 1;" class="glyphicon glyphicon-triangle-bottom hover" ng-style="{ 'color' : (p.downArrow) ? '#9E9E9E' : '#616161' }"></span>
+        <span ng-click="vm.toggleDown(p);" class="glyphicon glyphicon-triangle-bottom hover" ng-style="{ 'color' : (p.downArrow) ? '#9E9E9E' : '#616161' }"></span>
       </div>
         </div>
       </div>
