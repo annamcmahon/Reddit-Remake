@@ -1,78 +1,78 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<!-- CSS Libaries -->
-		<link href='assets/libs/bootstrap/dist/css/bootstrap.min.css' rel='stylesheet'>
-		<link href='assets/libs/angular-material/angular-material.min.css' rel='stylesheet'>
-		<link href='partials/all.css' rel='stylesheet'>
-		<link href='assets/libs/angular-ui-select/dist/select.min.css' rel='stylesheet'>
-		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-	</head>
+<head>
+	<!-- CSS Libaries -->
+	<link href='assets/libs/bootstrap/dist/css/bootstrap.min.css' rel='stylesheet'>
+	<link href='assets/libs/angular-material/angular-material.min.css' rel='stylesheet'>
+	<link href='partials/all.css' rel='stylesheet'>
+	<link href='assets/libs/angular-ui-select/dist/select.min.css' rel='stylesheet'>
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
 
-	<body ng-app='app'>
-		<!-- NAVIGATION -->
-		<nav class="navbar navbar-inverse" role="navigation">
-		    <div class="navbar-header">
-		        <a class="navbar-brand" ui-sref="#"><img id="redditIcon" src="reddit.png" height="50"></img> </a>
-		    </div>
-				<form class="navbar-form navbar-left">
-					<div class="form-group navbar-center">
-						<input type="text" class="form-control" placeholder="Search">
-					</div>
-					<!--<button type="submit" class="btn btn-default">Submit</button>-->
-				</form>
-		    <ul class="nav navbar-nav navbar-right links">
-		        <li><a ui-sref="browse">FRONT</a></li>
-						<li><a ui-sref="browse-all">ALL</a></li>
-						<li><a ui-sref="discover">DISCOVER</a></li>
-						<li class="dropdown">
-		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"><span class="glyphicon glyphicon-user"></span> <span class="caret"></span></a>
-		          <ul class="dropdown-menu">
-		            <li><a ui-sref="profile-activity">Activity</a></li>
-								<li role="separator" class="divider"></li>
-								<li><a ui-sref="profile">Profile</a></li>
-								<li role="separator" class="divider"></li>
-								<li><a ui-sref="profile">Logout</a></li>
-		          </ul>
-						</li>
+<body ng-app='app'>
+	<!-- NAVIGATION -->
+	<nav class="navbar navbar-inverse" role="navigation">
+		<div class="navbar-header">
+			<a class="navbar-brand" ui-sref="browse"><img id="redditIcon" src="reddit.png" height="50"></img> </a>
+		</div>
+		<form class="navbar-form navbar-left">
+			<div class="form-group">
+				<input type="text" class="form-control" placeholder="Search">
+			</div>
+			<!--<button type="submit" class="btn btn-default">Submit</button>-->
+		</form>
+		<ul class="nav navbar-nav navbar-right links">
+			<li><a ui-sref="browse">FRONT</a></li>
+			<li><a ui-sref="browse-all">ALL</a></li>
+			<li><a ui-sref="discover">DISCOVER</a></li>
+			<li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"><span class="glyphicon glyphicon-user"></span> <span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a ui-sref="profile-activity">Activity</a></li>
+					<li role="separator" class="divider"></li>
+					<li><a ui-sref="profile">Profile</a></li>
+					<li role="separator" class="divider"></li>
+					<li><a ui-sref="profile">Logout</a></li>
 				</ul>
-		</nav>
-		<div ui-view class="text-center"></div>
-	</body>
+			</li>
+		</ul>
+	</nav>
+	<div ui-view class="text-center"></div>
+</body>
 
-	<!-- JS Libraries -->
-	<script src='assets/libs/angular/angular.min.js'></script>
-	<script src='assets/libs/jquery/dist/jquery.js'></script>
-	<script src='assets/libs/angular-ui-router/release/angular-ui-router.min.js'></script>
-	<script src='assets/libs/bootstrap/dist/js/bootstrap.min.js'></script>
-	<script src='assets/libs/angular-animate/angular-animate.min.js'></script>
-	<script src='assets/libs/angular-bootstrap/ui-bootstrap.js'></script>
-	<script src='assets/libs/angular-bootstrap/ui-bootstrap-tpls.js'></script>
-	<script src='assets/libs/angular-material/angular-material.min.js'></script>
-	<script src="assets/libs/angular-sanitize/angular-sanitize.js"></script>
-	<script src="assets/libs/angular-ui-select/dist/select.js"></script>
-	<script src="assets/libs/ng-file-upload-shim/ng-file-upload-shim.min.js"></script>
-	<script src="assets/libs/ng-file-upload/ng-file-upload.min.js"></script>
+<!-- JS Libraries -->
+<script src='assets/libs/angular/angular.min.js'></script>
+<script src='assets/libs/jquery/dist/jquery.js'></script>
+<script src='assets/libs/angular-ui-router/release/angular-ui-router.min.js'></script>
+<script src='assets/libs/bootstrap/dist/js/bootstrap.min.js'></script>
+<script src='assets/libs/angular-animate/angular-animate.min.js'></script>
+<script src='assets/libs/angular-bootstrap/ui-bootstrap.js'></script>
+<script src='assets/libs/angular-bootstrap/ui-bootstrap-tpls.js'></script>
+<script src='assets/libs/angular-material/angular-material.min.js'></script>
+<script src="assets/libs/angular-sanitize/angular-sanitize.js"></script>
+<script src="assets/libs/angular-ui-select/dist/select.js"></script>
+<script src="assets/libs/ng-file-upload-shim/ng-file-upload-shim.min.js"></script>
+<script src="assets/libs/ng-file-upload/ng-file-upload.min.js"></script>
 
-	<!-- other JS -->
+<!-- other JS -->
 
-	<!-- client services -->
-	<script src='app.js' type='text/javascript'></script>
-	<script src='app-router.js' type='text/javascript'></script>
+<!-- client services -->
+<script src='app.js' type='text/javascript'></script>
+<script src='app-router.js' type='text/javascript'></script>
 
-	<!-- client controllers	 -->
-	<script src='partials/browse/browse-controller.js' type='text/javascript'></script>
-	<script src='partials/browse/browse-all-controller.js' type='text/javascript'></script>
-	<script src='partials/browse-subreddit/browse-subreddit-controller.js' type='text/javascript'></script>
-	<script src='partials/login/login-controller.js' type='text/javascript'></script>
-	<script src='partials/make-post/make-post-controller.js' type='text/javascript'></script>
-	<script src='partials/view-post/view-post-controller.js' type='text/javascript'></script>
-	<script src='partials/discover/discover-controller.js' type='text/javascript'></script>
-	<script src='partials/profile-activity/profile-activity-controller.js' type='text/javascript'></script>
-	<script src='partials/profile/profile-controller.js' type='text/javascript'></script>
-	<script src='partials/shared-properties.js' type='text/javascript'></script>
+<!-- client controllers	 -->
+<script src='partials/browse/browse-controller.js' type='text/javascript'></script>
+<script src='partials/browse/browse-all-controller.js' type='text/javascript'></script>
+<script src='partials/browse-subreddit/browse-subreddit-controller.js' type='text/javascript'></script>
+<script src='partials/login/login-controller.js' type='text/javascript'></script>
+<script src='partials/make-post/make-post-controller.js' type='text/javascript'></script>
+<script src='partials/view-post/view-post-controller.js' type='text/javascript'></script>
+<script src='partials/discover/discover-controller.js' type='text/javascript'></script>
+<script src='partials/profile-activity/profile-activity-controller.js' type='text/javascript'></script>
+<script src='partials/profile/profile-controller.js' type='text/javascript'></script>
+<script src='partials/shared-properties.js' type='text/javascript'></script>
 
-	<script src='partials/comments/comments-controller.js' type="text/javascript"></script>
+<script src='partials/comments/comments-controller.js' type="text/javascript"></script>
 
 
 </html>
