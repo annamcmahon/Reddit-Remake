@@ -2,6 +2,8 @@ browseModule.controller('browseController', ['$scope', '$state', '$http','Shared
 	var vm = this;
 	vm.title = "Front";
 	vm.makePost= false;
+	vm.selectedSortField="";
+	vm.sortFields =["new","trending","top"];
 
 	vm.toggleDown = function(item) {
 		SharedService.downvotePost(item.id);
@@ -10,7 +12,9 @@ browseModule.controller('browseController', ['$scope', '$state', '$http','Shared
 	vm.toggleUp = function(item) {
 		SharedService.upvotePost(item.id);
 	};
-
+	vm.sortPostsBy= function(item){
+		console.log(item);
+	}
 
 	vm.toggleFlag = function(item) {
 		SharedService.setFlagged(item.id);

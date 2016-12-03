@@ -162,6 +162,18 @@ ul.nav a:hover {
   margin-left: 10px;
   margin-right: 10px;
 }
+/*to fix the drop dow from moving things around the page*/
+input[type=search] {
+    -webkit-appearance: textfield;
+     box-sizing:border-box!important;
+    -webkit-box-sizing:border-box!important;
+}
+.sort-container{
+  width: 160px;
+}
+.posts-div{
+  padding-top: 10px;
+}
 .post-title{
   margin-top: 0px
 }
@@ -169,11 +181,21 @@ ul.nav a:hover {
   text-decoration: none; /* remove link underline */
   color:#FF5252;
 }
+.title-container{
+  display: inline-flex;
+}
 .post-btn-div {
   text-align: right;
-  display: inline-flex
+  display: inline-flex;
+  padding-top: 10px;
 }
-
+.post-container{
+    margin-left: auto;
+    margin-right:auto;
+    width: 70%;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
 .post-input {
   text-align: left;
  /* display: inline-block; */
