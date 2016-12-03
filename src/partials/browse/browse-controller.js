@@ -27,7 +27,6 @@ browseModule.controller('browseController', ['$scope', '$state', '$http','Shared
 		item.share = !item.share;
 	};
 	vm.setDetail = function(p){
-		console.log("hey");
 		vm.detail= p;
 		vm.selectedPost = p.id;
 	}

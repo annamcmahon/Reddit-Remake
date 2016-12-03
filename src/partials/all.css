@@ -131,7 +131,14 @@ ul.nav a:hover {
 }
 
 .vote-count {
+  padding: 0px;
   padding-right: inherit;
+  margin: 0px;
+  text-align: center
+}
+.vote-count-text{
+  padding: 0px;
+  margin: 0px;
 }
 
 .post-btn:hover{
@@ -145,6 +152,14 @@ ul.nav a:hover {
 }
 .post-btn-title{
   color: #212121;
+}
+.post-container{
+  color: #212121;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.post-title{
+  margin-top: 0px
 }
 .post-btn-title:hover{
   text-decoration: none; /* remove link underline */
@@ -173,7 +188,14 @@ ul.nav a:hover {
   padding-top: 20px;
   border-radius: 30px;
 }
-
+.vote-count{
+  vertical-align: middle;
+}
+.arrows-container{
+  width:30px;
+  margin-left: 5px;
+  margin-right:5px;
+}
 h1, h2, h3, p {
   font-family: 'Roboto', sans-serif !important;
   font-style: normal !important;
@@ -186,10 +208,14 @@ h1, h2, h3, p {
 .selectedPost{
   background-color: #eff0f1;
 }
+.row-container {
+  display: flex;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
 .row-image{
-  padding-top: 20px;
   height: 80px;
-  width: 60px;
+  width: 80px;
 }
 h1 {
   font-size: 24px;
