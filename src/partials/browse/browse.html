@@ -3,19 +3,19 @@
 <br></br>
 <div class="container"> <!-- this is needed for the bootstrap grid i'm using here to control the width of the rows -->
 <div class="row">
-<div class="col-sm-5">
-	<div class="row">
-		<h1> / {{vm.title}} </h1>
-		<div> <!--- add dropdown here -->
-			sort by<span class="caret"></span>
-		</div>
-		<div class="post-btn-div">
-			<a href ="#/make-post" class="post-btn">
-				<span class="glyphicon glyphicon-pencil"></span> Post
-			</a>
-		</div>
+<div class="row">
+	<h1> / {{vm.title}} </h1>
+	<div> <!--- add dropdown here -->
+		sort by<span class="caret"></span>
 	</div>
-	<div class="row browse row-border" ng-click="vm.setDetail(p)" ng-repeat="p in vm.data" style="padding-bottom:20px;">
+	<div class="post-btn-div">
+		<a href ="#/make-post" class="post-btn">
+			<span class="glyphicon glyphicon-pencil"></span> Post
+		</a>
+	</div>
+</div>
+<div class="col-sm-5">
+	<div class="row browse row-border" ng-click="vm.setDetail(p)" ng-class="{'selectedPost': p.id==vm.selectedPost}"  ng-repeat="p in vm.data" style="padding-bottom:20px;">
 		<div class="col-sm-1 numbers">
 			<div class="row"></div>
 			<div class="row">	<h2 style="text-align:right; padding-top: 20px;">{{p.votes}}</h2></div>

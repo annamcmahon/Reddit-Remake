@@ -29,6 +29,7 @@ browseModule.controller('browseController', ['$scope', '$state', '$http','Shared
 	vm.setDetail = function(p){
 		console.log("hey");
 		vm.detail= p;
+		vm.selectedPost = p.id;
 	}
 	vm.data = SharedService.getAllPosts();
 

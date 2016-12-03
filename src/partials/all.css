@@ -183,6 +183,9 @@ h1, h2, h3, p {
 .browse:hover{
   background-color: #eff0f1;
 }
+.selectedPost{
+  background-color: #eff0f1;
+}
 .row-image{
   padding-top: 20px;
   height: 80px;
