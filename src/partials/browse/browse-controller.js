@@ -1,6 +1,7 @@
 browseModule.controller('browseController', ['$scope', '$state', '$http','SharedService', function ($scope, $state, $http, SharedService) {
 	var vm = this;
 	vm.title = "Front";
+	vm.makePost= false;
 
 	vm.toggleDown = function(item) {
 		SharedService.downvotePost(item.id);

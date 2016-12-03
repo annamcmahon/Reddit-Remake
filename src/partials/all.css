@@ -153,6 +153,10 @@ ul.nav a:hover {
 .post-btn-title{
   color: #212121;
 }
+.scrollable {
+  height:70vh; /*sets to height of viewport*/
+  overflow-y: auto;
+}
 .post-container{
   color: #212121;
   margin-left: 10px;
@@ -263,7 +267,10 @@ p {
 }
 
 .container {
-  /* width: 100%; */
+  /*width: 90%; */
+}
+.view-container{
+  width:90%;
 }
 
 .hover:hover, .hover:visited {
