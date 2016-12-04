@@ -30,6 +30,7 @@ sharedService.service('SharedService', function () {
         var mySavedPosts = [1,5,7];
         var myPosts = [9];
         var myComments = [];
+        var user = "anna";
 
         return {
             getProperty: function () {
@@ -98,6 +99,9 @@ sharedService.service('SharedService', function () {
             },
             getSubreddits(user){ //TODO
               return mySubreddits;
+            },
+            getUser(){ //TODO
+              return user;
             }
         };
     });
