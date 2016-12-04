@@ -302,3 +302,8 @@ p {
 .iconsPost:hover {
   color: black !important;
 }
+
+#website-title {
+  float:right !important;
+}
+
