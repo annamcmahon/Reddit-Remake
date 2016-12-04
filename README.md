@@ -7,6 +7,3 @@ to install front end modules use bower:
 
 to view: 
 "open index.html" 
-
-for comments branch:
-"bower install angular-utils-disqus", i don't think "bower install module --save" will do anything, as the bower.json file never changed
