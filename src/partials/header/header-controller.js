@@ -3,6 +3,7 @@ browseModule.controller('headerController', ['$scope', '$state', '$http','Shared
   vm.selectedTopItem = "browse";
 	vm.currentFeed = "Front";
 	vm.followsCurrentFeed = true;
+	vm.browsing=true;
   //vm.userName = SharedService.getUser() || '';
 	vm.subreddits = SharedService.getSubreddits("anna") ;
 	vm.followSubreddit = function(){
