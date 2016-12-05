@@ -37,6 +37,23 @@ browseModule.controller('headerController', ['$scope', '$state', '$http','Shared
 		vm.selectedTopItem ="";
 		$state.go("browse");
 	}
+	vm.activitySubredditSelected= function(){
+		//broadcast and filter
+	}
+	vm.mySavedSelected = function(c){
+		SharedService.setCurrentFeed("mysaved");
+		vm.currentFeed = "My Saved Posts";
+		vm.discovering = false;
+		vm.profileActivity = true;
+		$state.go("browse");
+	}
+	vm.myPostsSelected= function(){
+		SharedService.setCurrentFeed("myposts");
+		vm.currentFeed = "My Posts";
+		vm.discovering = false;
+		vm.profileActivity = true;
+		$state.go("browse");
+	}
 	vm.makePost = function(){
 		SharedService.setMakePost();
 	}

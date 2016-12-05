@@ -110,6 +110,17 @@ sharedService.service('SharedService', function ($rootScope) {
               if(subreddit==='Front' || subreddit==='All'){
                 currentPosts= posts;
               }
+              else if(subreddit==='mysaved'){
+                var result = posts.filter(function( post ) {
+                  return post.fav == true;
+                });
+                currentPosts = result;
+                currentFeed= "My Saved Posts";
+              }
+              else if(subreddit==='myposts'){
+                currentPosts=getUserPosts("anna");
+                currentFeed= "My Posts";
+              }
               else{
                 var result = posts.filter(function( post ) {
                   return post.subreddit === subreddit;
