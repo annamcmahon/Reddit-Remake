@@ -75,21 +75,21 @@ vm.postData = function(){
 	vm.currentPost= {};
 	vm.data = SharedService.getAllPosts();
 }
-	vm.setDetail = function(p){
-		vm.detail= p;
-		vm.selectedPost = p.id;
-		// TODO: fix issue where comments are the same
-		$scope.disqusConfig = {
-    			disqus_shortname: 'reddit-remake',
-    			disqus_identifier: p.id,
-    			disqus_url: 'http://katiemquinn.com/' + p.id
-		};
-		console.log($scope.disqusConfig);
+vm.setDetail = function(p){
+	vm.detail= p;
+	vm.selectedPost = p.id;
+	// TODO: fix issue where comments are the same
+	$scope.disqusConfig = {
+  			disqus_shortname: 'reddit-remake',
+  			disqus_identifier: p.id,
+  			disqus_url: 'http://katiemquinn.com/' + p.id
 	};
+	console.log($scope.disqusConfig);
+};
 
 	vm.init = function(){
 		// this may fail without a promise, very hacky
-		vm.data = SharedService.getAllPosts(); 
+		vm.data = SharedService.getAllPosts();
 		vm.setDetail(vm.data[0]);
 		$scope.disqusConfig = {
 			disqus_shortname: 'reddit-remake',

@@ -32,6 +32,7 @@ sharedService.service('SharedService', function ($rootScope) {
         var myPosts = [9];
         var myComments = [];
         var user = "anna";
+        var currentFeed= "Front";
 
         return {
             getProperty: function () {
@@ -105,6 +106,7 @@ sharedService.service('SharedService', function ($rootScope) {
               return user;
             },
             setCurrentFeed(subreddit){
+              currentFeed= subreddit;
               if(subreddit==='Front' || subreddit==='All'){
                 currentPosts= posts;
               }
@@ -116,11 +118,17 @@ sharedService.service('SharedService', function ($rootScope) {
               }
               $rootScope.$broadcast('feedChanged', currentPosts);
             },
+            getCurrentFeed(){
+              return  currentFeed;
+            },
             setMakePost(){
               $rootScope.$broadcast('makePost', true);
             },
             getCurrentPosts(){
               var currentPosts;
+            },
+            followsCurrentFeed(){
+              return mySubreddits.includes(currentFeed);
             }
         };
     });

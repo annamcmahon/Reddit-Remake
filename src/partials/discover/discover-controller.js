@@ -22,8 +22,8 @@ discoverModule.controller('discoverController', ['$scope', '$state', '$http', 'S
 		"/r/movies":["/r/cats", "/r/dogs", "/r/tech"]
 	};
 	vm.subredditSelected = function(c){
-		SharedService.setProperty(c);
-		$state.go("subreddit");
+		SharedService.setCurrentFeed(c);
+		$state.go("browse");
 	}
 	vm.person = {};
 	vm.peopleObj =

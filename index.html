@@ -35,8 +35,15 @@
 				</ui-select>
 			</div>
 		</form>
-		<div class="post-btn">
-			<span ng-click="vm.makePost()"class="glyphicon glyphicon-pencil"></span>
+		<div class="title-container">
+		<h1> {{vm.currentFeed}} </h1>
+		<div class="post-btn-div"  ng-click="vm.makePost=true">
+			<div ng-show="vm.followsCurrentFeed" class="post-btn">
+				<span ng-click="vm.makePost()"  class="glyphicon glyphicon-pencil"></span>
+			</div>
+			<div ng-show="!vm.followsCurrentFeed" class="post-btn">
+				<span ng-click="vm.followSubreddit()"  class="glyphicon glyphicon-plus"></span>
+			</div>
 		</div>
 		<ul class="nav navbar-nav navbar-right links">
 			<li><a ui-sref="browse" ng-click="vm.select('browse')" ng-class="{'selectedTopItem': 'browse'==vm.selectedTopItem}" >FRONT</a></li>
