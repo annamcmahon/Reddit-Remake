@@ -8,15 +8,19 @@
 	<link href='src/partials/header/header.css' rel='stylesheet'>
 	<link href='src/assets/libs/angular-ui-select/dist/select.min.css' rel='stylesheet'>
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link rel="stylesheet" href="src/assets/libs/animate.css/animate.css">
 </head>
 
 <body ng-app='app'>
 	<!-- NAVIGATION -->
 	<div ng-controller='headerController as vm'>
 	<nav class="navbar navbar-inverse" role="navigation">
+		<div class="container" style="margin: 0px; width: 100%;">
+		<div class="row">
+		<div class="col-sm-4">
 		<div class="navbar-header">
 			<a class="navbar-brand" ui-sref="browse"><img id="redditIcon" src="src/reddit.png" height="50"></img> </a>
-			<h1 id="website-title">reddit</h1>
+			<h1 id="website-title" style="margin-top: 17px">reddit</h1>
 		</div>
 		<!--
 		<form class="navbar-form navbar-left">
@@ -35,8 +39,10 @@
 				</ui-select>
 			</div>
 		</form>
-		<div class="title-container">
-		<h1> {{vm.currentFeed}} </h1>
+		</div>
+
+		<div class="col-sm-4 title-container" style="padding-left: 190px">
+		<h1 style="margin-top: 17px"> {{vm.currentFeed}} </h1>
 		<div class="post-btn-div"  ng-click="vm.makePost=true">
 			<div ng-show="vm.followsCurrentFeed" class="post-btn">
 				<span ng-click="vm.makePost()"  class="glyphicon glyphicon-pencil"></span>
@@ -45,8 +51,10 @@
 				<span ng-click="vm.followSubreddit()"  class="glyphicon glyphicon-plus"></span>
 			</div>
 		</div>
+		</div>
+		<div class="col-sm-4">
 		<ul class="nav navbar-nav navbar-right links">
-			<li><a ui-sref="discover" ng-click="vm.select('discover')" ng-class="{'selectedTopItem': 'discover'==vm.selectedTopItem}" >DISCOVER</a></li>
+			<li style="    font-family: 'Roboto', sans-serif !important;"><a ui-sref="discover" ng-click="vm.select('discover')" ng-class="{'selectedTopItem': 'discover'==vm.selectedTopItem}" >DISCOVER</a></li>
 			<li class="dropdown">
 				<a ng-click="vm.select('profile')" ng-class="{'selectedTopItem': 'profile'==vm.selectedTopItem}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"><span class="glyphicon glyphicon-user"></span> <span class="caret"></span></a>
 				<ul class="dropdown-menu">
@@ -58,6 +66,9 @@
 				</ul>
 			</li>
 		</ul>
+		</div>
+		</div>
+		</div>
 	</nav>
 </div>
 	<div ui-view class="text-center"></div>
