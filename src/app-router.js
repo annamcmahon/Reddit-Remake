@@ -1,4 +1,5 @@
-app.config(function($stateProvider, $urlRouterProvider) {
+app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
+	$locationProvider.hashPrefix('!'); // for comments
 
 	$urlRouterProvider.otherwise('/browse');
 
