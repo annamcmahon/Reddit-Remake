@@ -116,6 +116,9 @@ sharedService.service('SharedService', function ($rootScope) {
               }
               $rootScope.$broadcast('feedChanged', currentPosts);
             },
+            setMakePost(){
+              $rootScope.$broadcast('makePost', true);
+            },
             getCurrentPosts(){
               var currentPosts;
             }

@@ -35,6 +35,9 @@
 				</ui-select>
 			</div>
 		</form>
+		<div class="post-btn">
+			<span ng-click="vm.makePost()"class="glyphicon glyphicon-pencil"></span>
+		</div>
 		<ul class="nav navbar-nav navbar-right links">
 			<li><a ui-sref="browse" ng-click="vm.select('browse')" ng-class="{'selectedTopItem': 'browse'==vm.selectedTopItem}" >FRONT</a></li>
 			<li><a ui-sref="browse-all" ng-click="vm.select('browse-all')" ng-class="{'selectedTopItem': 'browse-all'==vm.selectedTopItem}">ALL</a></li>

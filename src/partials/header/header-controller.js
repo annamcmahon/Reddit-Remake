@@ -12,4 +12,7 @@ browseModule.controller('headerController', ['$scope', '$state', '$http','Shared
 		SharedService.setCurrentFeed(c);
 		$state.go("browse");
 	}
+	vm.makePost = function(){
+		SharedService.setMakePost();
+	}
 }]);

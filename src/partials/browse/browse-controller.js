@@ -7,7 +7,12 @@ browseModule.controller('browseController', ['$scope', '$state', '$http','Upload
 	vm.currentPost={};
 
 	vm.data = SharedService.getCurrentPosts();
-
+	$scope.$on('feedChanged', function(event, x) {
+		vm.data= x;
+	});
+	$scope.$on('makePost', function(event, x) {
+		vm.makePost= x;
+	});
 	vm.toggleDown = function(item) {
 		SharedService.downvotePost(item.id);
 	};
@@ -70,11 +75,6 @@ vm.postData = function(){
 	vm.currentPost= {};
 	vm.data = SharedService.getAllPosts();
 }
-	vm.data = SharedService.getAllPosts();
-	$scope.$on('feedChanged', function(event, x) {
-		vm.data= x;
-	});
-
 	vm.setDetail = function(p){
 		vm.detail= p;
 		vm.selectedPost = p.id;
@@ -89,6 +89,7 @@ vm.postData = function(){
 
 	vm.init = function(){
 		// this may fail without a promise, very hacky
+		vm.data = SharedService.getAllPosts(); 
 		vm.setDetail(vm.data[0]);
 		$scope.disqusConfig = {
 			disqus_shortname: 'reddit-remake',
