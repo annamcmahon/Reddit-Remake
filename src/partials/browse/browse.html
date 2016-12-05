@@ -28,7 +28,7 @@
 <div class="row post-container make-post-container" ng-show="vm.makePost" style="padding-bottom: 15px">
 <div class="row" ng-click="vm.makePost=true">
 	<div class="form-group">
-		<input type="text" class="form-control" ng-model="vm.currentPost.title" placeholder="Post to @"{{vm.currentFeed}}>
+		<input type="text" class="form-control" ng-model="vm.currentPost.title" placeholder="Post to @"+{{vm.currentFeed}}>
 	</div>
 </div>
 <div class="row" ng-show="vm.makePost" style="color:#9E9E9E;">

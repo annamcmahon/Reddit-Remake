@@ -97,6 +97,9 @@ ul.nav a:hover {
   margin: 0 auto;
   margin-top: 10%;
 }
+.glyphicon-star, .glyphicon-comment, .glyphicon-flag{
+  color: #616161;
+}
 /*
 .glyphicon-share:hover,
 .glyphicon-share:visited,
