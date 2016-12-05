@@ -75,6 +75,14 @@ vm.postData = function(){
 	vm.currentPost= {};
 	vm.data = SharedService.getAllPosts();
 }
+vm.star=function(){
+	vm.detail.saved= !vm.detail.saved;
+	SharedService.setSaved(vm.detail.id);
+}
+vm.flag=function(){
+	vm.detail.flagged= !vm.detail.flagged;
+	SharedService.setFlagged(vm.detail.id);
+}
 vm.setDetail = function(p){
 	vm.detail= p;
 	vm.selectedPost = p.id;

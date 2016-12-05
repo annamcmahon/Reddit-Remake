@@ -18,20 +18,26 @@
     </div>
     <br></br>
     <br></br>
-    <div class="row" ng-repeat="c in vm.subreddits" ng-if="vm.person.selected==undefined" ng-click="vm.subredditSelected(c)">
-        <div class="col-md-offset-4 col-md-1 text-right row-item">
+    <div class="row" ng-repeat="c in vm.subreddits" ng-if="vm.person.selected==undefined">
+        <div ng-show="!vm.isSubscribed(c)" ng-click="vm.subscribe(c)" class="col-md-offset-4 col-md-1 text-right row-item">
           <span class="glyphicon glyphicon-plus big-plus"></span>
         </div>
-        <div class="col-md-5 text-left row-item">
+        <div ng-click="vm.unsubscribe(c)" ng-show="vm.isSubscribed(c)"class="col-md-offset-4 col-md-1 text-right row-item">
+          <span class="glyphicon glyphicon-minus big-plus"></span>
+        </div>
+        <div ng-click="vm.subredditSelected(c)" class="col-md-5 text-left row-item">
           <h2 class="discover-text">{{c}}</h2>
           <h3>subscribed to by: Anna</h3>
         </div>
     </div>
     <div class="row" ng-repeat="c in vm.peopleObj[vm.person.selected.name].front" ng-click="vm.subredditSelected(c)">
-      <div class="col-md-offset-4 col-md-1 text-right row-item">
+      <div ng-show="!vm.isSubscribed(c)" ng-click="vm.subscribe(c)" class="col-md-offset-4 col-md-1 text-right row-item">
         <span class="glyphicon glyphicon-plus big-plus"></span>
       </div>
-      <div class="col-md-5 text-left row-item">
+      <div ng-click="vm.unsubscribe(c)" ng-show="vm.isSubscribed(c)"class="col-md-offset-4 col-md-1 text-right row-item">
+        <span class="glyphicon glyphicon-minus big-plus"></span>
+      </div>
+      <div ng-click="vm.subredditSelected(c)" class="col-md-5 text-left row-item">
         <h2 class="discover-text">{{c}}</h2>
         <h3>subscribed to by: Anna</h3>
       </div>
@@ -51,35 +57,44 @@
     </div>
     <br></br>
     <br></br>
-    <div class="row" ng-repeat="c in vm.subreddits" ng-if="vm.subreddits.selected==undefined" ng-click="vm.subredditSelected(c)">
-      <div class="col-md-offset-4 col-md-1 text-right row-item">
+    <div class="row" ng-repeat="c in vm.subreddits" ng-if="vm.subreddits.selected==undefined" >
+      <div ng-show="!vm.isSubscribed(c)" ng-click="vm.subscribe(c)" class="col-md-offset-4 col-md-1 text-right row-item">
         <span class="glyphicon glyphicon-plus big-plus"></span>
       </div>
-      <div class="col-md-5 text-left row-item">
+      <div ng-click="vm.unsubscribe(c)" ng-show="vm.isSubscribed(c)"class="col-md-offset-4 col-md-1 text-right row-item">
+        <span class="glyphicon glyphicon-minus big-plus"></span>
+      </div>
+      <div ng-click="vm.subredditSelected(c)" class="col-md-5 text-left row-item">
         <h2 class="discover-text">{{c}}</h2>
-        <h3>similar to: sports</h3>
+        <h3>Similar to: Cats</h3>
       </div>
     </div>
-    <div class="row" ng-repeat="c in vm.similarSubreddits[vm.subreddits.selected]" ng-click="vm.subredditSelected(c)">
-      <div class="col-md-offset-4 col-md-1 text-right row-item">
+    <div class="row" ng-repeat="c in vm.similarSubreddits[vm.subreddits.selected]" >
+      <div ng-show="!vm.isSubscribed(c)" ng-click="vm.subscribe(c)" class="col-md-offset-4 col-md-1 text-right row-item">
         <span class="glyphicon glyphicon-plus big-plus"></span>
       </div>
-      <div class="col-md-5 text-left row-item">
+      <div ng-click="vm.unsubscribe(c)" ng-show="vm.isSubscribed(c)"class="col-md-offset-4 col-md-1 text-right row-item">
+        <span class="glyphicon glyphicon-minus big-plus"></span>
+      </div>
+      <div ng-click="vm.subredditSelected(c)" class="col-md-5 text-left row-item">
         <h2 class="discover-text">{{c}}</h2>
-        <h3>similar to: sports</h3>
+        <h3>Similar to: Cats</h3>
       </div>
     </div>
   </div>
   <div ng-show="vm.radioModel=='popular'" >
     <br></br>
     <br></br>
-    <div class="row" ng-repeat="c in vm.subreddits" ng-click="vm.subredditSelected(c)">
-      <div class="col-md-offset-4 col-md-1 text-right row-item">
+    <div class="row" ng-repeat="c in vm.subreddits">
+      <div ng-show="!vm.isSubscribed(c)" ng-click="vm.subscribe(c)" class="col-md-offset-4 col-md-1 text-right row-item">
         <span class="glyphicon glyphicon-plus big-plus"></span>
       </div>
-      <div class="col-md-5 text-left row-item">
+      <div ng-click="vm.unsubscribe(c)" ng-show="vm.isSubscribed(c)"class="col-md-offset-4 col-md-1 text-right row-item">
+        <span class="glyphicon glyphicon-minus big-plus"></span>
+      </div>
+      <div ng-click="vm.subredditSelected(c)" class="col-md-5 text-left row-item">
         <h2 class="discover-text">{{c}}</h2>
-        <h3>1m subscribers</h3>
+        <h3>1m subcribers</h3>
       </div>
     </div>
   </div>

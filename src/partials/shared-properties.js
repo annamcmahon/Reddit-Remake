@@ -129,6 +129,12 @@ sharedService.service('SharedService', function ($rootScope) {
             },
             followsCurrentFeed(){
               return mySubreddits.includes(currentFeed);
+            },
+            followsSubreddit(sub){
+              return mySubreddits.includes(sub);
+            },
+            unfollowSubreddit(sub){
+               mySubreddits.splice(mySubreddits.indexOf(sub), 1);
             }
         };
     });

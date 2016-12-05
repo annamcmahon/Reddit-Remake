@@ -3,7 +3,7 @@ import SocketServer
 import logging
 import cgi
 
-PORT = 5000
+PORT = 8000
 
 class ServerHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
 

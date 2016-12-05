@@ -75,17 +75,18 @@ ul.nav a:hover {
 }
 .glyphicon-triangle-top {
   font-size: 2.0em;
+  color: #9E9E9E;
 }
-
 .glyphicon-triangle-bottom {
   /*color: #616161;*/
   font-size: 2.0em;
+  color: #9E9E9E;
 }
 .glyphicon-triangle-top:hover {
-  color: #9E9E9E;
+  color: black;
 }
 .glyphicon-triangle-bottom:hover {
-  color: #9E9E9E;
+  color: black;
 }
 
 .votes {
@@ -112,6 +113,12 @@ ul.nav a:hover {
   color: #FF5252;
 }
 */
+.flagged{
+  color: red;
+}
+.starred{
+  color: red;
+}
 .big-plus:before{
   font-size: 1.4em;
 }
@@ -119,11 +126,19 @@ ul.nav a:hover {
   margin-top:-20px;
 }
 
+.glyphicon-plus{
+  color: black;
+}
+.glyphicon-minus{
+  color: #9E9E9E;
+}
+.glyphicon-minus:hover{
+  color: black;
+}
 .glyphicon-plus:hover,
 .glyphicon-plus.active{
   color: #9E9E9E;
 }
-
 .browse {
   text-align: left;
 }

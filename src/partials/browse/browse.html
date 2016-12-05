@@ -89,16 +89,13 @@
 	</h1>
 	<div class="post-btn-div text-right">
 		<a class="post-btn" >
-			<span class="glyphicon glyphicon-share"></span> Share
-		</a>
-		<a class="post-btn" >
-			<span class="glyphicon glyphicon-star"></span> Star
+			<span ng-click="vm.star()" class="glyphicon glyphicon-star" ng-class="{'starred': vm.detail.saved}" ></span> Star
 		</a>
 		<a class="post-btn">
-			<span class="glyphicon glyphicon-flag"></span> Flag
+			<span ng-click="vm.flag()" class="glyphicon glyphicon-flag" ng-class="{'flagged': vm.detail.flagged}"></span> Flag
 		</a>
 		<a class="post-btn">
-			<span class="glyphicon glyphicon-comment"></span> Comment
+			<span ng-click="vm.scrollToComments()" class="glyphicon glyphicon-comment"></span> Comment
 		</a>
 	</div>
 	<br></br>

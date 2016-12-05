@@ -3,6 +3,7 @@ discoverModule.controller('discoverController', ['$scope', '$state', '$http', 'S
 	console.log(SharedService.getProperty());
   vm.radioModel = 'suggested';
 	vm.subreddits = ["/r/cats", "/r/dogs", "/r/tech", "/r/sports", "/r/cs", "/r/extremesports", "/r/food", "/r/interview", "/r/movies"];
+	vm.mysubs = SharedService.getSubreddits();
 	vm.friendsData = [{reddit: "cat", description:"Adam"},{reddit: "cat", description:"good"},{reddit: "dogs", description:"good"},{reddit: "dogs", description:"good"}];
 	vm.suggestedData= [{reddit: "dogs", description:"good"},{reddit: "dogs", description:"good"},{reddit: "dogs", description:"good"},{reddit: "dogs", description:"good"}];
 	vm.popularData=[{reddit: "dogs", description:"good"},{reddit: "dogs", description:"good"},{reddit: "dogs", description:"good"},{reddit: "dogs", description:"good"}];
@@ -24,6 +25,17 @@ discoverModule.controller('discoverController', ['$scope', '$state', '$http', 'S
 	vm.subredditSelected = function(c){
 		SharedService.setCurrentFeed(c);
 		$state.go("browse");
+	}
+	vm.isSubscribed =function(c){
+		return vm.mysubs.includes(c);
+	}
+	vm.subscribe =function(c){
+		SharedService.followSubreddit(c);
+		vm.mysubs = SharedService.getSubreddits();
+	}
+	vm.unsubscribe = function(c){
+		SharedService.unfollowSubreddit(c);
+		vm.mysubs = SharedService.getSubreddits();
 	}
 	vm.person = {};
 	vm.peopleObj =
