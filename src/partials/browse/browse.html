@@ -5,7 +5,7 @@
 		<div class="input-group">
 		 	<input type="text" ng-model="vm.dynamicPopover.link" class="form-control"  placeholder="add a link...">
 		 		<span class="input-group-btn">
-					<button class="btn btn-default" ng-click="vm.closePopover()"type="button">add</button>
+					<button class="btn btn-default" ng-click="vm.closePopover(); vm.currentPost.hasLink=true"type="button">add</button>
 		 		</span>
 	 	</div><!-- /input-group -->
 		</div>
@@ -28,20 +28,20 @@
 <div class="row post-container make-post-container" ng-show="vm.makePost">
 <div class="row" ng-click="vm.makePost=true">
 	<div class="form-group">
-		<input type="text" class="form-control" ng-model="vm.currentPost.title" placeholder="Post to @subreddit_name">
+		<input type="text" class="form-control" ng-model="vm.currentPost.title" placeholder="Post to @"{{vm.currentFeed}}>
 	</div>
 </div>
 <div class="row" ng-show="vm.makePost" style="color:#9E9E9E;">
 	<div class="col-sm-1" style="padding-left: 0px;">
-		<span class="glyphicon glyphicon-link hover " popover-placement="bottom" popover-is-open="vm.isOpen" uib-popover-template="vm.dynamicPopover.templateUrl"></span>
+		<span ng-class="{'hasLink': vm.currentPost.hasLink}" class="glyphicon glyphicon-link hover " popover-placement="bottom" popover-is-open="vm.isOpen" uib-popover-template="vm.dynamicPopover.templateUrl"></span>
 	</div>
 	<div class="col-sm-1" style="padding-left: 0px;">
-		<span class="glyphicon glyphicon-picture hover" type="file" ngf-select="vm.uploadFiles($file, $invalidFiles)"
+		<span ng-class="{'hasPic': vm.currentPost.hasPic}" ng-click="vm.currentPost.hasPic=true" class="glyphicon glyphicon-picture hover" type="file" ngf-select="vm.uploadFiles($file, $invalidFiles)"
 						accept="image/*" ngf-max-height="1000" ngf-max-size="1MB"></span>
 	</div>
 	<div class="col-sm-9 text-right" >
-		<button type="button" class="btn btn-default" ng-click="vm.postData()">Post</button>
-		<button type="button" class="btn btn-default" ng-click="vm.makePost=false">Cancel</button>
+		<button type="button" class="btn btn-default" ng-click="vm.postData();vm.makePost=false ">Post</button>
+		<button type="button" class="btn btn-default" ng-click="vm.clearPostData(); vm.makePost=false">Cancel</button>
 	</div>
 </div>
 </div>

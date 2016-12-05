@@ -42,8 +42,8 @@
 		</div>
 
 		<div class="col-sm-4 title-container" style="padding-left: 190px">
-		<h1 style="margin-top: 17px"> {{vm.currentFeed}} </h1>
-		<div class="post-btn-div"  ng-click="vm.makePost=true">
+		<h1 ng-show="!vm.discovering" style="margin-top: 17px"> {{vm.currentFeed}} </h1>
+		<div ng-show="!vm.discovering" class="post-btn-div"  ng-click="vm.makePost=true">
 			<div ng-show="vm.followsCurrentFeed" class="post-btn">
 				<span ng-click="vm.makePost()"  class="glyphicon glyphicon-pencil"></span>
 			</div>
@@ -54,7 +54,7 @@
 		</div>
 		<div class="col-sm-4">
 		<ul class="nav navbar-nav navbar-right links">
-			<li style="    font-family: 'Roboto', sans-serif !important;"><a ui-sref="discover" ng-click="vm.select('discover')" ng-class="{'selectedTopItem': 'discover'==vm.selectedTopItem}" >DISCOVER</a></li>
+			<li style=" font-family: 'Roboto', sans-serif !important;"><a ui-sref="discover" ng-click="vm.select('discover'); vm.discovering=true;" ng-class="{'selectedTopItem': 'discover'==vm.selectedTopItem}" >DISCOVER</a></li>
 			<li class="dropdown">
 				<a ng-click="vm.select('profile')" ng-class="{'selectedTopItem': 'profile'==vm.selectedTopItem}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"><span class="glyphicon glyphicon-user"></span> <span class="caret"></span></a>
 				<ul class="dropdown-menu">

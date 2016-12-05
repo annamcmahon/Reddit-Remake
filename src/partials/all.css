@@ -82,6 +82,9 @@ ul.nav a:hover {
   font-size: 2.0em;
   color: #9E9E9E;
 }
+.hasPic, .hasLink{
+  color: red;
+}
 .glyphicon-triangle-top:hover {
   color: black;
 }

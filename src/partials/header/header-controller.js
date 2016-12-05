@@ -11,6 +11,10 @@ browseModule.controller('headerController', ['$scope', '$state', '$http','Shared
 		SharedService.followSubreddit(vm.currentFeed);
 	}
   vm.select = function(selected){
+		vm.subreddits.selected = undefined;
+		if(selected!=='browse'){
+			vm.discovering=true;
+		}
     vm.selectedTopItem = selected;
   }
 	vm.logout = function () {
@@ -19,9 +23,18 @@ browseModule.controller('headerController', ['$scope', '$state', '$http','Shared
 		vm.currentFeed = SharedService.getCurrentFeed();
 		vm.followsCurrentFeed = SharedService.followsCurrentFeed();
 	});
+	$scope.$on('discovering', function(event, x) {
+		vm.discovering = x;
+	});
+	vm.setDiscovering= function(){
+		vm.subreddits.selected = undefined;
+		vm.discovering = true;
+	}
 	vm.subredditSelected = function(c){
 		SharedService.setCurrentFeed(c);
 		vm.currentFeed = c;
+		vm.discovering = false;
+		vm.selectedTopItem ="";
 		$state.go("browse");
 	}
 	vm.makePost = function(){
