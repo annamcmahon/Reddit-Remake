@@ -66,11 +66,11 @@
 	<div class="row browse row-border" ng-click="vm.setDetail(p)" ng-class="{'selectedPost': p.id==vm.selectedPost}"  ng-repeat="p in vm.data">
 		<div class="row-container">
 			<div class="arrows-container" >
-				<span ng-click="vm.toggleUp(p);" class="glyphicon glyphicon-triangle-top hover" ng-style="{ 'color' : (p.upArrow) ? '#9E9E9E' : '#616161'}"></span>
+				<span ng-click="vm.toggleUp(p);" class="glyphicon glyphicon-triangle-top hover" ng-style="{ 'color' : (p.upArrow) ? '#616161' : '#9E9E9E'}"></span>
 				<div class="vote-count">
 					<h2 class="vote-count-text">{{p.votes}}</h2>
 				</div>
-				<span ng-click="vm.toggleDown(p);" class="glyphicon glyphicon-triangle-bottom hover" ng-style="{ 'color' : (p.downArrow) ? '#9E9E9E' : '#616161' }"></span>
+				<span ng-click="vm.toggleDown(p);" class="glyphicon glyphicon-triangle-bottom hover" ng-style="{ 'color' : (p.downArrow) ? '#616161' : '#9E9E9E' }"></span>
 			</div>
 			<div ng-show="p.pic != null">
 				<img src={{p.pic}} alt="Cat pic" class="row-image">
