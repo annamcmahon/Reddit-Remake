@@ -1,4 +1,4 @@
-sharedService.service('SharedService', function () {
+sharedService.service('SharedService', function ($rootScope) {
         var property = 'Front';
         var subreddits = {};
         var mySubreddits = {};
@@ -25,8 +25,9 @@ sharedService.service('SharedService', function () {
         {id:11, subreddit: "/r/dogs", postTitle: "Lazy Day", source:"aww", votes:3,pic:"http://i.imgur.com/ySbhL8E.png",downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false, poster: "anna"},
         {id:11, subreddit: "/r/cats", postTitle: "Lazy Day", source:"aww", votes:3,pic:"http://i.imgur.com/ySbhL8E.png",downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false, poster: "anna"}
         ];
+        var currentPosts= posts;
         var allSubreddits =["/r/cats", "/r/dogs", "/r/tech", "/r/sports", "/r/cs", "/r/extremesports", "/r/food", "/r/interview", "/r/movies"];
-        var mySubreddits = ["/r/cats", "/r/dogs"];
+        var mySubreddits = ["/r/cats", "/r/dogs", "Front", "All"];
         var mySavedPosts = [1,5,7];
         var myPosts = [9];
         var myComments = [];
@@ -102,6 +103,21 @@ sharedService.service('SharedService', function () {
             },
             getUser(){ //TODO
               return user;
+            },
+            setCurrentFeed(subreddit){
+              if(subreddit==='Front' || subreddit==='All'){
+                currentPosts= posts;
+              }
+              else{
+                var result = posts.filter(function( post ) {
+                  return post.subreddit === subreddit;
+                });
+                currentPosts= result;
+              }
+              $rootScope.$broadcast('feedChanged', currentPosts);
+            },
+            getCurrentPosts(){
+              var currentPosts;
             }
         };
     });

@@ -1,5 +1,5 @@
 <div ng-controller="browseController">
-<br></br>
+	<!--<br></br>-->
 <script type="text/ng-template" id="myPopoverTemplate.html">
 		<div class="form-group" style="left: -90px; width: 200px;" >
 		<div class="input-group">
@@ -11,6 +11,7 @@
 		</div>
 </script>
 <div class="view-container container"> <!-- this is needed for the bootstrap grid i'm using here to control the width of the rows -->
+<!--
 <div class="row">
 	<div class="title-container">
 	<h1> {{vm.title}} </h1>
@@ -21,6 +22,7 @@
 	</div>
 </div>
 </div>
+-->
 <!-- make a post-->
 <div class="row post-container" ng-show="vm.makePost">
 <div class="row" ng-click="vm.makePost=true">
@@ -42,19 +44,23 @@
 	</div>
 </div>
 </div>
+
 <!-- filter-->
-<div class="row" >
-<div class="col-lg-5">
-	<div class="sort-container">
-		<ui-select class="sort-container" ng-model="vm.selectedSortField" theme="bootstrap">
-			<ui-select-match class="sort-container"  placeholder="Order By">Order By: {{$select.selected}}</ui-select-match>
-			<ui-select-choices class="sort-container" repeat="item in vm.sortFields | filter: $select.search">
-				<div ng-click="vm.sortPostsBy(item)" class="sort-container" ng-bind-html="item | highlight: $select.search"></div>
-			</ui-select-choices>
-		</ui-select>
-	</div>
+<div class="row view-container-all" >
+
 <!--post browser -->
-<div class="scrollable posts-div">
+<div class="posts-div">
+	<!--
+<div class="sort-container">
+	<ui-select class="sort-container" ng-model="vm.selectedSortField" theme="bootstrap">
+		<ui-select-match class="sort-container"  placeholder="Order By">Order By: {{$select.selected}}</ui-select-match>
+		<ui-select-choices class="sort-container" repeat="item in vm.sortFields | filter: $select.search">
+			<div ng-click="vm.sortPostsBy(item)" class="sort-container" ng-bind-html="item | highlight: $select.search"></div>
+		</ui-select-choices>
+	</ui-select>
+</div>
+-->
+<div class="scrollable">
 	<div class="row browse row-border" ng-click="vm.setDetail(p)" ng-class="{'selectedPost': p.id==vm.selectedPost}"  ng-repeat="p in vm.data">
 		<div class="row-container">
 			<div class="arrows-container" >
@@ -75,8 +81,7 @@
 	</div>
 </div>
 </div>
-<div class="col-sm-7 scrollable" >
-	<div class="post-content">
+<div class="post-content scrollable">
 	<h1>
 	{{vm.detail.postTitle}}
 	</h1>
@@ -98,9 +103,8 @@
 	<img src={{vm.detail.pic}} alt="Cat pic" height="auto" width="50%">
 
 	<!-- disqus comments right here -->
-		<div ng-init="vm.init()">
-			<dir-disqus config="disqusConfig"></dir-disqus>
-		</div>
+	<div ng-init="vm.init()">
+		<dir-disqus config="disqusConfig"></dir-disqus>
 	</div>
 </div>
 </div>

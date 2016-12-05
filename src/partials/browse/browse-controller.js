@@ -6,8 +6,8 @@ browseModule.controller('browseController', ['$scope', '$state', '$http','Upload
 	vm.sortFields =["new","trending","top"];
 	vm.currentPost={};
 
-	vm.data = SharedService.getAllPosts();
-	
+	vm.data = SharedService.getCurrentPosts();
+
 	vm.toggleDown = function(item) {
 		SharedService.downvotePost(item.id);
 	};
@@ -34,7 +34,7 @@ browseModule.controller('browseController', ['$scope', '$state', '$http','Upload
 	vm.toggleShare = function(item) {
 		item.share = !item.share;
 	};
-	
+
 	vm.uploadFiles = function(file, errFiles) {
 			$scope.f = file;
 			$scope.errFile = errFiles && errFiles[0];
@@ -71,11 +71,14 @@ vm.postData = function(){
 	vm.data = SharedService.getAllPosts();
 }
 	vm.data = SharedService.getAllPosts();
-	
+	$scope.$on('feedChanged', function(event, x) {
+		vm.data= x;
+	});
+
 	vm.setDetail = function(p){
 		vm.detail= p;
 		vm.selectedPost = p.id;
-		// TODO: fix issue where comments are the same	
+		// TODO: fix issue where comments are the same
 		$scope.disqusConfig = {
     			disqus_shortname: 'reddit-remake',
     			disqus_identifier: p.id,
