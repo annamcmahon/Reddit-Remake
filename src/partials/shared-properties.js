@@ -18,12 +18,12 @@ sharedService.service('SharedService', function ($rootScope) {
         {id:9, subreddit: "/r/cats", postTitle: "What's next?", source:"cnn", votes: 7,pic:"http://i.imgur.com/2WWJ5af.jpg",downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false, poster: "anna"},
         {id:10, subreddit: "/r/cats", postTitle: "A look into the future", source:"imgur", votes: 6, pic:"http://i.imgur.com/5jLWFZZ.jpg",downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false, poster: "anna"},
         {id:11, subreddit: "/r/dogs", postTitle: "Lazy Day", source:"aww", votes:3,pic:"http://i.imgur.com/ySbhL8E.png",downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false, poster: "anna"},
-        {id:11, subreddit: "/r/dogs", postTitle: "Lazy Day", source:"aww", votes:3,pic:"http://i.imgur.com/ySbhL8E.png",downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false, poster: "anna"},
-        {id:11, subreddit: "/r/dogs", postTitle: "Lazy Day", source:"aww", votes:3,pic:"http://i.imgur.com/ySbhL8E.png",downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false, poster: "anna"},
-        {id:11, subreddit: "/r/dogs", postTitle: "Lazy Day", source:"aww", votes:3,pic:"http://i.imgur.com/ySbhL8E.png",downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false, poster: "anna"},
-        {id:11, subreddit: "/r/dogs", postTitle: "Lazy Day", source:"aww", votes:3,pic:"http://i.imgur.com/ySbhL8E.png",downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false, poster: "anna"},
-        {id:11, subreddit: "/r/dogs", postTitle: "Lazy Day", source:"aww", votes:3,pic:"http://i.imgur.com/ySbhL8E.png",downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false, poster: "anna"},
-        {id:11, subreddit: "/r/cats", postTitle: "Lazy Day", source:"aww", votes:3,pic:"http://i.imgur.com/ySbhL8E.png",downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false, poster: "anna"}
+        {id:12, subreddit: "/r/dogs", postTitle: "Lazy Day", source:"aww", votes:3,pic:"http://i.imgur.com/ySbhL8E.png",downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false, poster: "anna"},
+        {id:13, subreddit: "/r/dogs", postTitle: "Lazy Day", source:"aww", votes:3,pic:"http://i.imgur.com/ySbhL8E.png",downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false, poster: "anna"},
+        {id:14, subreddit: "/r/dogs", postTitle: "Lazy Day", source:"aww", votes:3,pic:"http://i.imgur.com/ySbhL8E.png",downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false, poster: "anna"},
+        {id:15, subreddit: "/r/dogs", postTitle: "Lazy Day", source:"aww", votes:3,pic:"http://i.imgur.com/ySbhL8E.png",downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false, poster: "anna"},
+        {id:16, subreddit: "/r/dogs", postTitle: "Lazy Day", source:"aww", votes:3,pic:"http://i.imgur.com/ySbhL8E.png",downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false, poster: "anna"},
+        {id:17, subreddit: "/r/cats", postTitle: "Lazy Day", source:"aww", votes:3,pic:"http://i.imgur.com/ySbhL8E.png",downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false, poster: "anna"}
         ];
         var currentPosts= posts;
         var allSubreddits =["/r/cats", "/r/dogs", "/r/tech", "/r/sports", "/r/cs", "/r/extremesports", "/r/food", "/r/interview", "/r/movies"];
