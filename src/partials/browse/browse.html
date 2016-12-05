@@ -24,7 +24,8 @@
 </div>
 -->
 <!-- make a post-->
-<div class="row post-container make-post-container" ng-show="vm.makePost">
+<div class="animated slideInDown">
+<div class="row post-container make-post-container animated slideInDown" ng-show="vm.makePost">
 <div class="row" ng-click="vm.makePost=true">
 	<div class="form-group">
 		<input type="text" class="form-control" ng-model="vm.currentPost.title" placeholder="Post to @subreddit_name">
@@ -42,6 +43,7 @@
 		<button type="button" class="btn btn-default" ng-click="vm.postData()">Post</button>
 		<button type="button" class="btn btn-default" ng-click="vm.makePost=false">Cancel</button>
 	</div>
+</div>
 </div>
 </div>
 
