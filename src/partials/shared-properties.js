@@ -124,6 +124,9 @@ sharedService.service('SharedService', function ($rootScope) {
             setMakePost(){
               $rootScope.$broadcast('makePost', true);
             },
+            setDiscovering(d){
+              $rootScope.$broadcast('discovering', d);
+            },
             getCurrentPosts(){
               var currentPosts;
             },

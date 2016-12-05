@@ -24,6 +24,7 @@ discoverModule.controller('discoverController', ['$scope', '$state', '$http', 'S
 	};
 	vm.subredditSelected = function(c){
 		SharedService.setCurrentFeed(c);
+		SharedService.setDiscovering(false);
 		$state.go("browse");
 	}
 	vm.isSubscribed =function(c){
