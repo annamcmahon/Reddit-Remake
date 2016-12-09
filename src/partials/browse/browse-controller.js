@@ -16,9 +16,6 @@ browseModule.controller('browseController', ['$scope', '$state', '$http','Upload
 		//vm.currentFeed = SharedService.getCurrentFeed();
 	});
 
-	// test - TODO remove if it doesn't fix comments
-	/*$scope.$on('pageChanged', function(event,x) {
-	});*/
 
 	$scope.$on('makePost', function(event, x) {
 		vm.makePost= x;
