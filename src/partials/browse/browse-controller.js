@@ -6,10 +6,14 @@ browseModule.controller('browseController', ['$scope', '$state', '$http','Upload
 	vm.sortFields =["new","trending","top"];
 	vm.currentPost={};
 
-	vm.data = SharedService.getCurrentPosts();
+	//vm.currentFeed = SharedService.getCurrentFeed();
+	//vm.data = SharedService.getCurrentPosts();
 	$scope.$on('feedChanged', function(event, x) {
 		vm.data= x;
-		vm.setDetailZero();
+		if(vm.data.length>0){
+			vm.setDetailZero();
+		}
+		//vm.currentFeed = SharedService.getCurrentFeed();
 	});
 	$scope.$on('makePost', function(event, x) {
 		vm.makePost= x;
@@ -71,10 +75,11 @@ vm.closePopover = function(){
 	vm.isOpen = false;
 }
 vm.postData = function(){
-	var x = {subreddit: vm.title , postTitle: vm.currentPost.title , date:new Date() ,source:"source1", votes: 0, pic:vm.currentPost.pic,downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false, poster: "anna"};
+	var x = {subreddit: vm.currentFeed, postTitle: vm.currentPost.title , date:new Date() ,source:vm.dynamicPopover.link, votes: 0, pic:vm.currentPost.pic,downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false, poster: "anna"};
 	SharedService.addPost(x);
 	vm.currentPost= {};
-	vm.data = SharedService.getAllPosts();
+	$state.go("browse", {}, {reload: true});
+	//vm.data = SharedService.getCurrentPosts();
 }
 vm.clearPostData=function(){
 	vm.currentPost= {};
@@ -104,17 +109,22 @@ vm.setDetailZero = function(p){
 	// TODO: fix issue where comments are the same
 	$scope.disqusConfig = {
   			disqus_shortname: 'reddit-remake',
-  			disqus_identifier: p.id,
-  			disqus_url: 'http://katiemquinn.com/' + p.id
+  			disqus_identifier: vm.data[0].id,
+  			disqus_url: 'http://katiemquinn.com/' + vm.data[0].id
 	};
 	console.log($scope.disqusConfig);
 };
 
 
 	vm.init = function(){
+		SharedService.setCurrentFeed(SharedService.getCurrentFeed())
+		vm.currentFeed = SharedService.getCurrentFeed();
 		// this may fail without a promise, very hacky
-		vm.data = SharedService.getAllPosts();
-		vm.setDetail(vm.data[0]);
+	//	vm.data = SharedService.getAllPosts();
+		//vm.data = SharedService.getCurrentPosts();
+		if(vm.data.length>0){
+			vm.setDetail(vm.data[0]);
+		}
 		$scope.disqusConfig = {
 			disqus_shortname: 'reddit-remake',
 			disqus_identifier: '0',

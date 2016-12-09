@@ -10,6 +10,9 @@ discoverModule.controller('discoverController', ['$scope', '$state', '$http', 'S
 	vm.data = {suggested: vm.suggestedData,friends:vm.friendsData, popular:vm.popularData };
 	vm.subscribed = {cat:false, dog:true};
 	vm.filter = "";
+	$scope.$on('feedChanged', function(event, x) {
+		vm.currentFeed = SharedService.getCurrentFeed();
+	});
 
 	vm.similarSubreddits = {
 		"/r/cats":["/r/extremesports", "/r/food", "/r/interview"],
@@ -24,7 +27,6 @@ discoverModule.controller('discoverController', ['$scope', '$state', '$http', 'S
 	};
 	vm.subredditSelected = function(c){
 		SharedService.setCurrentFeed(c);
-		SharedService.setDiscovering(false);
 		$state.go("browse");
 	}
 	vm.isSubscribed =function(c){
@@ -68,5 +70,8 @@ vm.people = [
 	{ name: 'Michael',   email: 'michael@email.com',front:["/r/cats", "/r/dogs", "/r/tech", "/r/sports", "/r/cs", "/r/extremesports", "/r/food", "/r/interview", "/r/movies"]},
 	{ name: 'Nicolás',   email: 'nicolas@email.com', front:["/r/cats", "/r/dogs", "/r/tech", "/r/sports", "/r/cs", "/r/extremesports", "/r/food", "/r/interview", "/r/movies"]}
 ];
-
+var init=function(){
+	SharedService.setCurrentFeed(SharedService.getCurrentFeed())
+}
+init();
 }]);

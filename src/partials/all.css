@@ -1,3 +1,9 @@
+.second-nav{
+  background: rgba(97, 97, 97, 0.73);
+  height:30px;
+  color:#21212;
+  font-family: 'Roboto', sans-serif;
+}
 .row-item {
   padding-top:7px;
   padding-bottom:7px;
@@ -9,6 +15,10 @@
 .subscribe-button{
   background-color: rgba(215, 215, 215, .5);
 }
+div::focus {
+    outline: none!important;
+    border: 0!important;
+ }
 .body{
   background-color: #F5F5F5;
 }
@@ -25,8 +35,6 @@
     background-color: rgba(215, 215, 215, 1);
     border-color: rgba(215, 215, 215, 1);
 }
-
-
 #redditIcon { /* this is for the icon in the navbar, probably a better fix to push up */
 
   margin-top: -15px;
@@ -131,7 +139,12 @@ ul.nav a:hover {
 .main-div{
   margin-top:-20px;
 }
-
+.glyphicon-plus-header{
+  color: white!important;
+}
+.glyphicon-plus-header:hover{
+  color: red!important;
+}
 .glyphicon-plus{
   color: black;
 }
@@ -351,4 +364,5 @@ p {
 
 #website-title {
   float:right !important;
+  color: white;
 }

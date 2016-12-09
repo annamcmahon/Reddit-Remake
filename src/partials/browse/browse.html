@@ -28,7 +28,7 @@
 <div class="row post-container make-post-container" ng-show="vm.makePost" style="padding-bottom: 15px">
 <div class="row" ng-click="vm.makePost=true">
 	<div class="form-group">
-		<input type="text" class="form-control" ng-model="vm.currentPost.title" placeholder="Post to @"+{{vm.currentFeed}}>
+		<input type="text" class="form-control" ng-model="vm.currentPost.title" placeholder="Post to {{vm.currentFeed}}">
 	</div>
 </div>
 <div class="row" ng-show="vm.makePost" style="color:#9E9E9E;">
@@ -46,9 +46,57 @@
 </div>
 </div>
 </div>
-
+<div class="row" ng-show="vm.data.length==0 && vm.currentFeed!='My Posts'&& vm.currentFeed!='My Saved Posts' && !vm.makePost">
+	<md-content class="md-padding" layout-xs="column" layout="row">
+	    <div flex-xs flex-gt-xs="100" layout="column">
+	      <md-card >
+	        <md-card-title>
+	          <md-card-title-text>
+	            <span class="md-headline">There are no posts to this subreddit yet. Click on the pencil to be the first to post!</span>
+							<br></br>
+							<span ng-click="vm.makePost=true" class="glyphicon glyphicon-pencil"></span>
+	          </md-card-title-text>
+	          <md-card-title-media>
+	            <div class="md-media-lg card-media"></div>
+	          </md-card-title-media>
+	        </md-card-title>
+	      </md-card>
+			</div>
+		</md-content>
+</div>
+<div class="row " ng-show="vm.data.length==0 && vm.currentFeed=='My Posts'">
+	<md-content class="md-padding" layout-xs="column" layout="row">
+			<div flex-xs flex-gt-xs="100" layout="column">
+				<md-card >
+					<md-card-title>
+						<md-card-title-text>
+							<span class="md-headline">You have not made any posts yet! Select the pencil on any subreddit to make a new post.</span>
+							<br></br>
+							<span class="glyphicon glyphicon-pencil"></span>
+						</md-card-title-text>
+					</md-card-title>
+					<md-card-actions layout="row" layout-align="end center">
+					</md-card-actions>
+				</md-card>
+			</div>
+		</md-content>
+</div>
+<div class="row " ng-show="vm.data.length==0 && vm.currentFeed=='My Saved Posts'">
+	<md-content class="md-padding" layout-xs="column" layout="row">
+			<div flex-xs flex-gt-xs="100" layout="column">
+				<md-card >
+					<md-card-title>
+						<md-card-title-text>
+							<span class="md-headline">You have not saved any posts yet! Click the star on any post to save it</span>
+							<br></br>
+							<span class="glyphicon glyphicon-star"></span>
+						</md-card-title-text>
+					</md-card-title>
+				</md-card>
+			</div>
+		</md-content></div>
 <!-- filter-->
-<div class="row view-container-all" >
+<div class="row view-container-all" ng-show="vm.data.length!=0" >
 
 <!--post browser -->
 <div class="posts-div" style="margin-top: -15px;">
@@ -66,14 +114,14 @@
 	<div class="row browse row-border" ng-click="vm.setDetail(p)" ng-class="{'selectedPost': p.id==vm.selectedPost}"  ng-repeat="p in vm.data">
 		<div class="row-container">
 			<div class="arrows-container" >
-				<span ng-click="vm.toggleUp(p);" class="glyphicon glyphicon-triangle-top hover" ng-style="{ 'color' : (p.upArrow) ? '#9E9E9E' : '#616161'}"></span>
+				<span ng-click="vm.toggleUp(p);" class="glyphicon glyphicon-triangle-top hover" ng-style="{ 'color' : (p.upArrow) ? '#616161' : '#9E9E9E'}"></span>
 				<div class="vote-count">
 					<h2 class="vote-count-text">{{p.votes}}</h2>
 				</div>
-				<span ng-click="vm.toggleDown(p);" class="glyphicon glyphicon-triangle-bottom hover" ng-style="{ 'color' : (p.downArrow) ? '#9E9E9E' : '#616161' }"></span>
+				<span ng-click="vm.toggleDown(p);" class="glyphicon glyphicon-triangle-bottom hover" ng-style="{ 'color' : (p.downArrow) ? '#616161' : '#9E9E9E' }"></span>
 			</div>
 			<div ng-show="p.pic != null">
-				<img src={{p.pic}} alt="Cat pic" class="row-image">
+				<img ng-src={{p.pic}} alt="Cat pic" class="row-image">
 			</div>
       <div class="post-container">
         <h2 class="post-title">{{p.postTitle}}</h2>
@@ -87,9 +135,12 @@
 	<h1>
 	{{vm.detail.postTitle}}
 	</h1>
+	<md-button class="md-icon-button md-accent" aria-label="Favorite">
+		 <md-icon md-svg-icon="img/icons/favorite.svg"></md-icon>
+	 </md-button>
 	<div class="post-btn-div text-right">
 		<a class="post-btn" >
-			<span ng-click="vm.star()" class="glyphicon glyphicon-star" ng-class="{'starred': vm.detail.saved}" ></span> Star
+			<span ng-click="vm.star()" class="glyphicon glyphicon-star" ng-class="{'starred': vm.detail.saved}" ></span> Save
 		</a>
 		<a class="post-btn">
 			<span ng-click="vm.flag()" class="glyphicon glyphicon-flag" ng-class="{'flagged': vm.detail.flagged}"></span> Flag
@@ -99,7 +150,7 @@
 		</a>
 	</div>
 	<br></br>
-	<img src={{vm.detail.pic}} alt="Cat pic" height="auto" width="50%">
+	<img ng-src={{vm.detail.pic}} alt="Cat pic" height="auto" width="50%">
 
 	<!-- disqus comments right here -->
 	<div ng-init="vm.init()">

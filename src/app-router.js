@@ -39,13 +39,6 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 		controllerAs: 'vm',
 	})
 	$stateProvider
-	.state('view-post', {
-		url: '/view-post',
-		templateUrl: 'src/partials/view-post/view-post.html',
-		controller: 'viewPostController',
-		controllerAs: 'vm',
-	})
-	$stateProvider
 	.state('subreddit', {
 		url: '/browse-subreddit',
 		templateUrl: 'src/partials/browse-subreddit/browse-subreddit.html',
