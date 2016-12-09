@@ -111,7 +111,7 @@
 </div>
 -->
 <div class="scrollable">
-	<div class="row browse row-border" ng-click="vm.setDetail(p)" ng-class="{'selectedPost': p.id==vm.selectedPost}"  ng-repeat="p in vm.data">
+	<div class="row browse row-border" ng-click="vm.setDetail(p);" ng-class="{'selectedPost': p.id==vm.selectedPost}"  ng-repeat="p in vm.data">
 		<div class="row-container">
 			<div class="arrows-container" >
 				<span ng-click="vm.toggleUp(p);" class="glyphicon glyphicon-triangle-top hover" ng-style="{ 'color' : (p.upArrow) ? '#616161' : '#9E9E9E'}"></span>
@@ -153,7 +153,7 @@
 	<img ng-src={{vm.detail.pic}} alt="Cat pic" height="auto" width="50%">
 
 	<!-- disqus comments right here -->
-	<div ng-init="vm.init()">
+	<div ng-init="vm.init();">
 		<dir-disqus config="disqusConfig"></dir-disqus>
 	</div>
 </div>

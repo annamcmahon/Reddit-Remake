@@ -15,6 +15,11 @@ browseModule.controller('browseController', ['$scope', '$state', '$http','Upload
 		}
 		//vm.currentFeed = SharedService.getCurrentFeed();
 	});
+
+	// test - TODO remove if it doesn't fix comments
+	/*$scope.$on('pageChanged', function(event,x) {
+	});*/
+
 	$scope.$on('makePost', function(event, x) {
 		vm.makePost= x;
 	});
@@ -95,21 +100,21 @@ vm.flag=function(){
 vm.setDetail = function(p){
 	vm.detail= p;
 	vm.selectedPost = p.id;
-	// TODO: fix issue where comments are the same
 	$scope.disqusConfig = {
   			disqus_shortname: 'reddit-remake',
-  			disqus_identifier: p.id,
+  			disqus_identifier: p.id.toString(),
   			disqus_url: 'http://katiemquinn.com/' + p.id
 	};
 	console.log($scope.disqusConfig);
+
 };
+
 vm.setDetailZero = function(p){
 	vm.detail= vm.data[0];
 	vm.selectedPost = 0;
-	// TODO: fix issue where comments are the same
 	$scope.disqusConfig = {
   			disqus_shortname: 'reddit-remake',
-  			disqus_identifier: vm.data[0].id,
+  			disqus_identifier: vm.data[0].id.toString(),
   			disqus_url: 'http://katiemquinn.com/' + vm.data[0].id
 	};
 	console.log($scope.disqusConfig);
@@ -125,11 +130,11 @@ vm.setDetailZero = function(p){
 		if(vm.data.length>0){
 			vm.setDetail(vm.data[0]);
 		}
-		$scope.disqusConfig = {
+		/*$scope.disqusConfig = {
 			disqus_shortname: 'reddit-remake',
 			disqus_identifier: '0',
 			disqus_url: 'http://katiemquinn.com/' + 0
-		};
+		};*/
 	};
 
 }]);
