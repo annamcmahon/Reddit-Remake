@@ -9,14 +9,14 @@ sharedService.service('SharedService', function ($rootScope) {
         {id:0, subreddit: "/r/cats", postTitle: "Just got my senior pics back", source:"source1", votes: 9, pic:"https://i.redd.it/5gf5qfi61jsx.jpg",downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false, poster: "anna"},
         {id:1, subreddit: "/r/dogs", postTitle: "And you think you had a rough day", source:"imgur", votes: 7, pic:"https://i.redd.it/qi9qollfydwx.jpg",downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false, poster: "anna"},
         {id:2, subreddit: "/r/dogs", postTitle: "Adopt today!", source:"spca.com", votes: 6, pic:"http://i.imgur.com/uloykHU.jpg",downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false,poster: "anna"},
-        {id:3, subreddit: "/r/random", postTitle: "Oh deer", source:"source4", votes:3,pic:"http://i.imgur.com/UbhuYRv.jpg", downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false, poster: "anna"},
+        {id:3, subreddit: "/r/food", postTitle: "South bend dining", source:"source4", votes:3,pic:"http://i.imgur.com/UbhuYRv.jpg", downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false, poster: "anna"},
         {id:4, subreddit: "/r/cats", postTitle: "Money cat", source:"source1", votes: 9, pic:"http://i.imgur.com/4AiXzf8.jpg",downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false,poster: "anna"},
         {id:5, subreddit: "/r/cats", postTitle: "Hype for food", source:"imgur", votes: 7, pic:"http://i.imgur.com/6tqUuOw.jpg",downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false, poster: "anna"},
         {id:6, subreddit: "/r/cats", postTitle: "lol", source:"spca.com", votes: 6, pic:"http://i.imgur.com/JOKsNeT.jpg",downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false, poster: "anna"},
         {id:7, subreddit: "/r/cats", postTitle: "Wild cat", source:"source4", votes:3,pic:"http://i.imgur.com/mtbl1cr.jpg", downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false, poster: "anna"},
         {id:8, subreddit: "/r/dogs", postTitle: "Happy Monday", source:"imgur", votes: 9, pic:"http://i.imgur.com/R0CNlPY.jpg",downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false, poster: "anna"},
-        {id:9, subreddit: "/r/random", postTitle: "What's next?", source:"cnn", votes: 7,pic:"http://i.imgur.com/2WWJ5af.jpg",downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false, poster: "anna"},
-        {id:10, subreddit: "/r/random", postTitle: "A look into the future", source:"imgur", votes: 6, pic:"http://i.imgur.com/5jLWFZZ.jpg",downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false, poster: "anna"},
+        {id:9, subreddit: "/r/food", postTitle: "Great food and more", source:"cnn", votes: 7,pic:"http://i.imgur.com/2WWJ5af.jpg",downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false, poster: "anna"},
+        {id:10, subreddit: "/r/food", postTitle: "Nom", source:"imgur", votes: 6, pic:"http://i.imgur.com/5jLWFZZ.jpg",downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false, poster: "anna"},
         {id:11, subreddit: "/r/dogs", postTitle: "Best friends", source:"aww", votes:3,pic:"http://i.imgur.com/MU2dD8E.jpg",downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false, poster: "anna"},
         {id:12, subreddit: "/r/dogs", postTitle: "Out on the water", source:"imgur", votes:3, pic:"http://i.imgur.com/xtoLyW2.jpg", downArrow: false,upArrow: false, comment: false, flag: false, fav: false, poster: "katie"},
         {id:13, subreddit: "/r/dogs", postTitle: "My dog", source:"aww", votes:3,pic:"http://i.imgur.com/6xIgEx2.jpg",downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false, poster: "anna"},
@@ -34,7 +34,7 @@ sharedService.service('SharedService', function ($rootScope) {
         {id:24, subreddit: "/r/dogs", postTitle: "My artist", source:"imgur", votes:0,pic:"http://i.imgur.com/hFei4AW.jpg",downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false, poster: "anna"},
         {id:25, subreddit: "/r/cats", postTitle: "My cat got stuck in a vase", source:"imgur", votes:2,pic:"http://i.imgur.com/kwZFyk8.jpg",downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false, poster: "anna"},
 
-        {id:26, subreddit: "/r/catss", postTitle: "Unexpected friends", source:"imgur", votes:1,pic:"http://i.imgur.com/amckVul.jpg",downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false, poster: "anna"},
+        {id:26, subreddit: "/r/cats", postTitle: "Unexpected friends", source:"imgur", votes:1,pic:"http://i.imgur.com/amckVul.jpg",downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false, poster: "anna"},
         {id:27, subreddit: "/r/cats", postTitle: "Halloween", source:"imgur", votes:1,pic:"http://i.imgur.com/agjj2s3.jpg",downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false, poster: "anna"},
         {id:28, subreddit: "/r/cats", postTitle: "My cat!", source:"imgur", votes:1,pic:"http://i.imgur.com/hUS7a8m.jpg",downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false, poster: "anna"},
         {id:29, subreddit: "/r/cats", postTitle: "Awww", source:"imgur", votes:1,pic:"http://i.imgur.com/R69WApe.jpg",downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false, poster: "anna"},
@@ -42,10 +42,10 @@ sharedService.service('SharedService', function ($rootScope) {
         {id:31, subreddit: "/r/cats", postTitle: "so young", source:"imgur", votes:0,pic:"http://i.imgur.com/eIGomYk.jpg",downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false, poster: "anna"},
         {id:32, subreddit: "/r/cats", postTitle: "My cat's famous", source:"imgur", votes:0,pic:"http://i.imgur.com/5NrHPaJ.jpg",downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false, poster: "anna"},
         {id:33, subreddit: "/r/cats", postTitle: "Best friend", source:"imgur", votes:0,pic:"http://i.imgur.com/7JzpTQF.jpg",downArrow: false, upArrow: false, share: false, comment: false, flag: false, fav: false, poster: "anna"}
-	
+
 	 ];
         var currentPosts= posts;
-        var allSubreddits =["/r/cats", "/r/dogs", "/r/tech", "/r/sports", "/r/cs", "/r/extremesports", "/r/food", "/r/interview", "/r/movies"];
+        var allSubreddits =["/r/cats","/r/random", "/r/dogs", "/r/tech", "/r/sports", "/r/cs", "/r/extremesports", "/r/food", "/r/interview", "/r/movies"];
         var mySubreddits = ["/r/cats", "/r/dogs", "Front", "All"];
         var mySavedPosts = [1,5,7];
         var myPosts = [9];
